@@ -1,0 +1,25 @@
+version: "3"
+services: 
+  mariadb_geoshot:
+    container_name: mariadb_geoshot
+    hostname: mariadb_geoshot_db
+    image: mariadb:11.3.2
+  
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --innodb_force_recovery=0
+    volumes: 
+      - /home/laplace/Projects/Geoshot/MariaDBDockerCompose/data:/var/lib/mysql
+      # Lembrando que MariaDB é um Fork de MySQL;
+    ports:
+      - 3306:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: mmPASS_WORDmm
+      MARIADB_DATABASE: geoshot_db
+      MARIADB_USER: geoshot_user
+      MARIADB_PASSWORD: mmPASS_WORDmm
+      MARIADB_AUTO_UPGRADE: no
+      TZ: America/Sao_Paulo
+
+
