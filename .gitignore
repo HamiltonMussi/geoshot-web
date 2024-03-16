@@ -1,2 +1,2 @@
-/DB/MariaDBDockerCompose/data/
-/DB/MariaDBDockerCompose/MariaDBCredentials
+/models/DB/MariaDBDockerCompose/data/
+/models/DB/MariaDBDockerCompose/MariaDBCredentials
