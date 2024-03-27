@@ -15,9 +15,8 @@ View para fazer:
     - repet password
 
 - Feed (BD PRONTO)
-
-- Desafio
-    - Integrar API do google (PAPIRAR!!!)
+		- Desafio
+		    - Integrar API do google (PAPIRAR!!!)
 
 - Resposta do Desafio
     - mostrar acurácia da tentativa
