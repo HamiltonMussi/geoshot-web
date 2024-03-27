@@ -5,6 +5,12 @@ View para fazer:
 - Login
 
 - Cadastro
+    - nome 
+    - sobrenome
+    - username
+    - email
+    - password
+    - repet password
 
 - Feed (BD PRONTO)
 
@@ -26,3 +32,4 @@ View para fazer:
 - Criação de Desafio
     - upload da foto
     - desafiante marcar posição da foto
+        - Integrar API do goole
