@@ -1,0 +1,27 @@
+View para fazer:
+
+- Home
+
+- Login
+
+- Cadastro
+
+- Feed
+
+- Desafio
+    - Integrar API do google
+
+- Resposta do Desafio
+    - mostrar acurácia da tentativa
+
+-Perfil do user
+    - tentativas
+    - Desafios criados por mim
+    - Desafios resolvidos por mim
+
+- Amigos
+    - pesquisar mais amigos
+
+- Criação de Desafio
+    - upload da foto
+    - desafiante marcar posição da foto
