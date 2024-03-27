@@ -2,7 +2,7 @@ View para fazer:
 
 - Home (O que colocar na página home?)
 
-- Login
+- Login (Pode ser nome de usuário também?)
     - email
     - password
 
