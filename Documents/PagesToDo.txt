@@ -1,12 +1,12 @@
 View para fazer:
 
-- Home
+- Home (O que colocar na página home?)
 
 - Login
 
 - Cadastro
 
-- Feed
+- Feed (BD PRONTO)
 
 - Desafio
     - Integrar API do google
@@ -14,12 +14,13 @@ View para fazer:
 - Resposta do Desafio
     - mostrar acurácia da tentativa
 
--Perfil do user
-    - tentativas
-    - Desafios criados por mim
-    - Desafios resolvidos por mim
+-Perfil do user (BD PRONTO)
+    - tentativas (BD PRONTO)
+    - Desafios criados por mim (BD PRONTO) 
+    - Desafios resolvidos por mim (BD PRONTO)
 
 - Amigos
+    - Mostrar Amigos (BD PRONTO)
     - pesquisar mais amigos
 
 - Criação de Desafio
