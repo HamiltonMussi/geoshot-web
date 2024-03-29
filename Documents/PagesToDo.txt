@@ -33,4 +33,4 @@ View para fazer:
 - Criação de Desafio
     - upload da foto
     - desafiante marcar posição da foto
-        - Integrar API do goole
+        - Integrar API do google
