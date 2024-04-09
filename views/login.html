@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geo-app | Login</title>
+    <link rel="stylesheet" href="static/styles/login-cadastro.css">
 </head>
 <body>
-    <div>
-        <h3>Login</h3>
-        <form action="https://webhook.site/4d5ac6b9-a5d5-4e79-9462-1f59e7fab92d" method="POST">
-            <label for="username">Username ou e-mail</label>
-            <input id="username" type="text" name="username" placeholder="Digite seu username ou e-mail">
-            <label for="password">Senha</label>
-            <input id="password" type="password" name="senha" placeholder="Digite sua senha">
-            <input type="submit">
-        </form>
+    <div class="main">
+        <div class="card-login">
+            <h1>Login</h1>
+            <form class="form-login" action="https://webhook.site/4d5ac6b9-a5d5-4e79-9462-1f59e7fab92d" method="POST">
+                <div class="textfield">
+                    <label for="username">Username ou e-mail</label>
+                    <input id="username" type="text" name="username" placeholder="Digite seu username ou e-mail">
+                </div>
+                <div class="textfield">
+                    <label for="password">Senha</label>
+                    <input id="password" type="password" name="senha" placeholder="Digite sua senha">
+                </div>
+                <button class="btn-submit" >Login</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
