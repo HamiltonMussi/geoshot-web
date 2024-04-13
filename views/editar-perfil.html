@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoShot | Editar perfil</title>
+    <link rel="stylesheet" href="static/styles/allStyles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="menu-lateral">
+            <div class="logo"></div>
+            <div class="link-menu-lateral">
+                <a href="#">Página inicial</a>
+            </div>
+            <div class="link-menu-lateral">
+                <a href="#">Criar desafio</a>
+            </div>
+            <div class="link-menu-lateral">
+                <a href="#">Perfil do usuário</a>
+            </div>
+            <div class="link-menu-lateral">
+                <a href="#">Pesquisar amigos</a>
+            </div>
+        </div>
+
+        <div class="feeds">
+            <div class="post-feed">
+                <div class="post-feed-identifier">
+                    <div class="foto-usuario">
+                        <img src="static/images/usuario.png">
+                    </div>
+                    <div class="nome-usuario"><a href="#">Trocar foto</a></div>
+                </div>
+                <form action="" method="POST">
+                    <div class="textfield">
+                        <label for="username">Username</label>
+                        <input id="username" type="text" name="username" placeholder="Digite seu novo username">
+                    </div>
+                    
+                    <div class="textfield">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu novo email">
+                    </div>
+
+                    <div class="textfield">                    
+                        <label for="password">Senha atual</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha atual">
+                    </div>
+
+                    <button class="btn-submit">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
