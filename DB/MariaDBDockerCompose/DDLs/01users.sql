@@ -8,5 +8,7 @@ CREATE TABLE `users` (
   `accuracy` decimal(3,2) NOT NULL DEFAULT 0.00,
   `attempts` int(11) NOT NULL DEFAULT 0,
   `password` varchar(65) NOT NULL,
-  PRIMARY KEY (`usr_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `username` varchar(100) NOT NULL,
+  PRIMARY KEY (`usr_id`),
+  UNIQUE KEY `users_username_unique` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
