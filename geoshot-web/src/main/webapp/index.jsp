@@ -5,9 +5,9 @@
   <title>Geoshot - Home</title>
 </head>
 <body>
-<h1>Home</h1>
-<br/>
-<a href="/login">Login</a>
-<a href="/signup">Cadastre-se</a>
+    <h1>Home</h1>
+    <br/>
+    <a href="/login">Login</a>
+    <a href="/signup">Cadastre-se</a>
 </body>
 </html>
