@@ -1,0 +1,36 @@
+View para fazer:
+
+- Home (O que colocar na página home?)
+
+- Login (Pode ser nome de usuário também?)
+    - email
+    - password
+
+- Cadastro
+    - nome
+    - sobrenome
+    - username
+    - email
+    - password
+    - repet password
+
+- Feed (BD PRONTO)
+		- Desafio
+		    - Integrar API do google (PAPIRAR!!!)
+
+- Resposta do Desafio
+    - mostrar acurácia da tentativa
+
+-Perfil do user (BD PRONTO)
+    - tentativas (BD PRONTO)
+    - Desafios criados por mim (BD PRONTO)
+    - Desafios resolvidos por mim (BD PRONTO)
+
+- Amigos
+    - Mostrar Amigos (BD PRONTO)
+    - pesquisar mais amigos
+
+- Criação de Desafio
+    - upload da foto
+    - desafiante marcar posição da foto
+        - Integrar API do google
