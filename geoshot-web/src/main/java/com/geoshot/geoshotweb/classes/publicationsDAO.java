@@ -77,19 +77,49 @@ public class publicationsDAO {
     }
 
 
+    public Publication getPublicationById(int pubId) {
+
+        Publication publication = null;
+
+        try {
+
+            String queryString = String.format("SELECT pub_id, correct_value, owner_user_id, photo, date_of_creation" +
+                    "FROM publications p" +
+                    "WHERE pub_id=\"%s\"",pubId);
+
+            PreparedStatement stmt = this.dbconnection.prepareStatement(queryString);
+
+            ResultSet result = stmt.executeQuery();
+
+            publication = new Publication(
+                    pubId,
+                    result.getInt("owner_user_id"),
+                    result.getString("photo"),
+                    result.getString("dateOfCreation"),
+                    result.getInt("correct_value")
+            );
+
+        } catch(SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return publication;
+    }
+
     public List<Feed> getFeedFromUser(String username) {
         List<Feed> feed = new ArrayList<>();
 
         try {
 
-            String queryString = String.format("SELECT p.pub_id as pub_id, p.photo as photo, p.date_of_creation as date_of_creation, u.username as username, u.photo as userphoto\n" +
-                                 "FROM\n" +
-                                 "(SELECT friends.usr_id2 as followed_id FROM friends WHERE usr_id1 = (SELECT users.usr_id FROM users WHERE users.username=\"%s\")) f\n" +
-                                 "INNER JOIN publications p\n" +
-                                 "ON p.owner_user_id = f.followed_id\n" +
-                                 "INNER JOIN users u\n" +
-                                 "ON p.owner_user_id = u.usr_id\n" +
-                                 "ORDER BY p.date_of_creation DESC;",username);
+            String queryString = String.format(  "SELECT p.pub_id as pub_id, p.photo as photo, p.date_of_creation as date_of_creation, u.username as username, u.photo as userphoto\n" +
+                                                 "FROM\n" +
+                                                 "(SELECT friends.usr_id2 as followed_id FROM friends WHERE usr_id1 = (SELECT users.usr_id FROM users WHERE users.username=\"%s\")) f\n" +
+                                                 "INNER JOIN publications p\n" +
+                                                 "ON p.owner_user_id = f.followed_id\n" +
+                                                 "INNER JOIN users u\n" +
+                                                 "ON p.owner_user_id = u.usr_id\n" +
+                                                 "WHERE pub_id NOT IN (SELECT attempts.pub_id FROM attempts WHERE attempts.owner_att_usr_id = (SELECT users.usr_id FROM users WHERE users.username = \"%s\"))\n" +
+                                                 "ORDER BY p.date_of_creation DESC;",username,username);
 
             PreparedStatement stmt = this.dbconnection.prepareStatement(queryString);
 
