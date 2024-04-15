@@ -4,34 +4,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Geoshot - Initial Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoShot | Página Inicial</title>
+    <link rel="stylesheet" href="static/styles/allStyles.css">
 </head>
 <body>
-<h1>Pagina Inicial de <%= request.getAttribute("username") %> </h1>
-<ul>
-    <%
-        // Retrieve the list of Feed objects from the request
-        List<Feed> feedList = (List<Feed>) request.getAttribute("feedlist");
-        if (feedList != null) {
-            for (Feed feed : feedList) {
-    %>
-    <li>username: <%= feed.getUsername() %></li>
-    <li>userphoto: <%= feed.getUserPhoto() %></li>
-    <li>photo: <%= feed.getPhoto() %></li>
-    <li>PubId: <%= feed.getPubId() %></li>
-    <li>Date Of Creaton: <%= feed.getDateOfCreation()%> </li>
-    <!-- Add more properties as needed -->
-    <%
-        }
-    } else {
-    %>
-    <li>Sem novas pubs.</li>
-    <% } %>
-</ul>
+<div class="main">
+    <%@include file="sidebar.jsp"%>
 
-<a href="/perfil">Perfil</a>
-<a href="/create-chall">Criar Desafio</a>
-<a href="/search">Pesquisar</a>
-<a href="/logout">Sair</a>
+    <div class="feeds">
+        <h1>Pagina Inicial de <%= request.getAttribute("username") %> </h1>
+
+        <%
+            // Retrieve the list of Feed objects from the request
+            List<Feed> feedList = (List<Feed>) request.getAttribute("feedlist");
+            if (feedList != null) {
+                for (Feed feed : feedList) {
+        %>
+
+        <div class="post-feed">
+            <div class="post-feed-identifier">
+                <div class="foto-usuario">
+                    <img src="static/images/usuario.png">
+                    <%= feed.getUserPhoto() %>
+                </div>
+                <div class="nome-usuario"><%= feed.getUsername() %></div>
+            </div>
+            <div class="foto-desafio">
+                <img src="static/images/paisagem.jpg">
+                <%= feed.getPhoto() %>
+                <%= feed.getPubId() %>
+            </div>
+            Date Of Creaton: <%= feed.getDateOfCreation()%>
+            <div>
+                <button class="btn-shot">shot</button>
+            </div>
+        </div>
+
+        <%
+            }
+        }
+        else {
+        %>
+        <div>
+            <h2>Não há desafios! Go get'em tiger!</h2>
+        </div>
+        <% } %>
+    </div>
+</div>
 </body>
 </html>

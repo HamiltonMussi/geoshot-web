@@ -1,7 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Geoshot - Criar Desafio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoshot | Criar desafio</title>
+    <link rel="stylesheet" href="static/styles/allStyles.css">
 </head>
 <body>
 

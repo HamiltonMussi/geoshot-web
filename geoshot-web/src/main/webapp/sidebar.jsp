@@ -12,4 +12,7 @@
     <div class="link-menu-lateral">
         <a href="#">Pesquisar amigos</a>
     </div>
+    <div class="link-menu-lateral">
+        <a href="#">Sair</a>
+    </div>
 </div>
