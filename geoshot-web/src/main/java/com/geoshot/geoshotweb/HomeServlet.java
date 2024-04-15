@@ -13,7 +13,7 @@ public class HomeServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
 
-        if(username==null) {
+        if(username == null) {
             response.sendRedirect("/");
         } else {
             response.sendRedirect("/initial-page");

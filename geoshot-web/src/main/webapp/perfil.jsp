@@ -1,4 +1,4 @@
-<%@ page contentType="text/html" pageEncoding="charset=UTF-8" language="java" %>
+<%@ page contentType="text/html" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -32,11 +32,11 @@
                 <div class="post-feed">
                     <div class="post-feed-identifier">
                         <div class="foto-usuario">
-                            <img src="static/images/usuario.png">
+                            <img src="static/images/usuario.png" alt="foto do usuario">
                         </div>
-                        <div class="nome-usuario"><%= request.setAttribute("username", thisUser.getUsername()); %></div>
+                        <div class="nome-usuario"><%= request.getAttribute("username") %></div>
                     </div>
-                    <h4>Minha taxa de acurácia: <%= request.setAttribute("attempts",thisUser.getAttempts()); %> %</h4>
+                    <h4>Minha taxa de acurácia: <%= request.getAttribute("attempts") %> %</h4>
                     <div><a href="#">Meus Desafios:</a> 45</div>
                     <div><a href="#">Resolvidos por mim:</a> 25</div>
                     <div><a href="#">Editar perfil</a></div>

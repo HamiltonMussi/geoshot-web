@@ -29,6 +29,12 @@ public class PhotoConverter {
         return encodedString;
     }
 
+    public  static  String encoder(byte[] imageBytes) {
+        String encodedString = null;
+        encodedString = Base64.getEncoder().encodeToString(imageBytes);
+        return encodedString;
+    }
+
     public static File decoder(String encodedString, String pathToSaveFile) {
 
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
