@@ -14,15 +14,30 @@ public class InitialPageServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
 
-        publicationsDAO feedGenerator = new publicationsDAO();
 
         if(username == null) {
             response.sendRedirect("/home");
         } else {
+            publicationsDAO feedGenerator = new publicationsDAO();
             request.setAttribute("feedlist",feedGenerator.getFeedFromUser(username));
             request.setAttribute("username",username);
             request.getRequestDispatcher("initialPage.jsp").forward(request,response);
         }
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        HttpSession session = request.getSession();
+        String username     = (String) session.getAttribute("username");
+        int    pubId        = Integer.parseInt((String) session.getAttribute("pub_id"));
+        int    userAnwser   = Integer.parseInt((String) session.getAttribute("user-anwser"));
+
+        if(username == null) {
+            response.sendRedirect("/home");
+        } else {
+            //continua no desafio.
+        }
+
+
     }
 
     public void destroy() {}
