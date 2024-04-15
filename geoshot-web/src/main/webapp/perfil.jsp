@@ -12,22 +12,6 @@
         <div class="main">
             <%@include file="sidebar.jsp"%>
 
-            <!-- <div class="menu-lateral">
-                <div class="logo"></div>
-                <div class="link-menu-lateral">
-                    <a href="/home">Página inicial</a>
-                </div>
-                <div class="link-menu-lateral">
-                    <a href="#">Criar desafio</a>
-                </div>
-                <div class="link-menu-lateral">
-                    <a href="/perfil">Perfil do usuário</a>
-                </div>
-                <div class="link-menu-lateral">
-                    <a href="#">Pesquisar amigos</a>
-                </div>
-            </div> -->
-
             <div class="feeds">
                 <div class="post-feed">
                     <div class="post-feed-identifier">
@@ -46,34 +30,3 @@
     </div>
 </body>
 </html>
-
-
-<!--
-<html>
-<head>
-    <title>Geoshot - Perfil</title>
-</head>
-<body>
-<h1>Perfil de <%= request.getAttribute("username") %></h1>
-
-Tem um monte de parametro que botei na request....:
-
-            request.setAttribute("username", thisUser.getUsername());
-
-            request.setAttribute("name", thisUser.getName());
-
-            request.setAttribute("email", thisUser.getEmail());
-
-            (STRING) request.setAttribute("photo", thisUser.getPhoto());
-
-            request.setAttribute("attempts",thisUser.getAttempts());
-
-            request.setAttribute("accuracy",thisUser.getAccuracy());
-
-<a href="/perfil/edit">Editar Perfil</a>
-<a href="/perfil/my-attempts">Minhas Tentativas</a>
-<a href="perfil/my-challs">Meus Desafios</a>
-
-</body>
-</html>
- -->
