@@ -9,24 +9,23 @@
 </head>
 <body>
     <div class="main">
-        <div class="main">
-            <%@include file="sidebar.jsp"%>
+        <%@include file="sidebar.jsp"%>
 
-            <div class="feeds">
-                <div class="post-feed">
-                    <div class="post-feed-identifier">
-                        <div class="foto-usuario">
-                            <img src="static/images/usuario.png" alt="foto do usuario">
-                        </div>
-                        <div class="nome-usuario"><%= request.getAttribute("username") %></div>
+        <div class="feeds">
+            <div class="post-feed">
+                <div class="post-feed-identifier">
+                    <div class="foto-usuario">
+                        <img src="static/images/usuario.png" alt="foto do usuario">
                     </div>
-                    <h4>Minha taxa de acurácia: <%= request.getAttribute("attempts") %> %</h4>
-                    <div><a href="#">Meus Desafios:</a> 45</div>
-                    <div><a href="#">Resolvidos por mim:</a> 25</div>
-                    <div><a href="#">Editar perfil</a></div>
+                    <div class="nome-usuario"><%= request.getAttribute("username") %></div>
                 </div>
+                <h4>Minha taxa de acurácia: <%= request.getAttribute("accuracy") %> %</h4>
+                <div><a href="/my-challs">Meus Desafios:</a> 45</div>
+                <div><a href="/my-attempts">Resolvidos por mim:</a> 25</div>
+                <div><a href="/edit-perfil">Editar perfil</a></div>
             </div>
         </div>
     </div>
+
 </body>
 </html>
