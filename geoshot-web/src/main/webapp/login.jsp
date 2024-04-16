@@ -10,10 +10,12 @@
 <body>
 <div class="main-login">
     <div class="card-login">
-        <div class="logo"></div>
+
+        <a href="/"><img src="static/images/Geoshot-logo120px.png" class="logo"></a>
+
         <h1>Login</h1>
         <% if(request.getAttribute("nologin") != null){ %>
-        <p class="error-message">Seu login ou senha estão incorretos!</p>
+        <div class="error-message">Seu login ou senha estão incorretos!</div>
         <% } %>
         <form class="form-login" action="/login" method="POST">
             <div class="textfield">
