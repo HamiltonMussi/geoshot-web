@@ -10,7 +10,7 @@ document.getElementById('guessForm').addEventListener('submit', function(event) 
     if (localStorage.getItem('new_position')) {
         // Obter o valor 'new_position' do localStorage
         const stored_position = localStorage.getItem('new_position');
-        const position_touple = (stored_position.lat, stored_position.lng);
+        const position_touple = [stored_position.lat, stored_position.lng];
         console.log(position_touple)
         // Definir o valor do input hidden no formulário
         document.getElementById('newPositionInput').value = position_touple;
