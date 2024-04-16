@@ -34,8 +34,8 @@ public class InitialPageServlet extends HttpServlet {
         if(username == null) {
             response.sendRedirect("/home");
         } else {
-            int    pubId        = Integer.parseInt((String) session.getAttribute("pub_id"));
-            int    userAnwser   = Integer.parseInt((String) session.getAttribute("user-anwser"));
+            int    pubId        = Integer.parseInt((String) request.getParameter("pub_id"));
+            int    userAnwser   = Integer.parseInt((String) request.getParameter("user-anwser"));
 
             publicationsDAO PublicationManager = new publicationsDAO();
 
