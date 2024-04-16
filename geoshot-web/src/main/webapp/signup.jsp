@@ -10,8 +10,10 @@
 <body>
     <div class="main-login">
         <div class="card-login">
-            <div class="logo"></div>
-            <h2>Cadastre-se</h2>
+            <div>
+               <a href="/"><img src="static/images/Geoshot-logo120px.png" class="logo"></a>
+            </div>
+            <h1>Cadastre-se</h1>
             <% if (request.getAttribute("non-equals-password") != null) { %>
             <div class="error-message">Suas senhas não batem!</div>
             <% } %>
