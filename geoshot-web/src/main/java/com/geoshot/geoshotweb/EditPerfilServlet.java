@@ -23,14 +23,9 @@ public class EditPerfilServlet extends HttpServlet {
         if(username == null) {
             response.sendRedirect("/home");
         } else {
-            usersDAO verifyUser = new usersDAO();
-            User thisUser = verifyUser.getUser(username);
-            request.setAttribute("username", thisUser.getUsername());
-            request.setAttribute("name", thisUser.getName());
-            request.setAttribute("email", thisUser.getEmail());
-            request.setAttribute("photo", thisUser.getPhoto());
-            request.setAttribute("attempts",thisUser.getAttempts());
-            request.setAttribute("accuracy",thisUser.getAccuracy());
+            usersDAO UserManager = new usersDAO();
+            User thisUser = UserManager.getUser(username);
+            request.setAttribute("user",thisUser);
             request.getRequestDispatcher("PAGINA-JSP").forward(request,response);
         }
 
@@ -74,12 +69,7 @@ public class EditPerfilServlet extends HttpServlet {
                 if(noPhotoOrPassword)     request.setAttribute("no-photo","no-photo");
                 if(noMatchNewPassword)    request.setAttribute("non-equal-password","non-equal-password");
                 if(noOldPasswordOnUpdate) request.setAttribute("no-old-password-on-update","no-old-password-on-update");
-                request.setAttribute("username", thisUser.getUsername());
-                request.setAttribute("name", thisUser.getName());
-                request.setAttribute("email", thisUser.getEmail());
-                request.setAttribute("photo", thisUser.getPhoto());
-                request.setAttribute("attempts",thisUser.getAttempts());
-                request.setAttribute("accuracy",thisUser.getAccuracy());
+                request.setAttribute("user",thisUser);
                 request.getRequestDispatcher("PAGINA-JSP").forward(request,response);
             } else {
 

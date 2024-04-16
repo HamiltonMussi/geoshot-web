@@ -20,14 +20,9 @@ public class PerfilServlet extends HttpServlet {
         if(username == null) {
             response.sendRedirect("/home");
         } else {
-            usersDAO verifyUser = new usersDAO();
-            User thisUser = verifyUser.getUser(username);
-            request.setAttribute("username", thisUser.getUsername());
-            request.setAttribute("name", thisUser.getName());
-            request.setAttribute("email", thisUser.getEmail());
-            request.setAttribute("photo", thisUser.getPhoto());
-            request.setAttribute("attempts",thisUser.getAttempts());
-            request.setAttribute("accuracy",thisUser.getAccuracy());
+            usersDAO UserManager= new usersDAO();
+            User thisUser = UserManager.getUser(username);
+            request.setAttribute("user", thisUser);
             request.getRequestDispatcher("perfil.jsp").forward(request,response);
         }
     }

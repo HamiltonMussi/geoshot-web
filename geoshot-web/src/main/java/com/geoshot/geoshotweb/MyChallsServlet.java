@@ -2,6 +2,7 @@ package com.geoshot.geoshotweb;
 
 import com.geoshot.geoshotweb.classes.Publication;
 import com.geoshot.geoshotweb.classes.publicationsDAO;
+import com.geoshot.geoshotweb.classes.usersDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -29,16 +30,18 @@ public class MyChallsServlet extends HttpServlet {
 
             List<Publication> publicationlist = PublicationManager.getMyPublications(username);
 
-            request.setAttribute("username",username);
+            usersDAO UserManager = new usersDAO();
+
+            request.setAttribute("user",UserManager.getUser(username));
             request.setAttribute("publicationlist", publicationlist);
 
-            request.getRequestDispatcher("PAGINA-MEUS-DESAFIOS-JSP").forward(request,response);
+            request.getRequestDispatcher("myChallenges.jsp").forward(request,response);
 
         }
 
     }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
         String username     = (String) session.getAttribute("username");
 
