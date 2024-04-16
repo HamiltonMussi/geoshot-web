@@ -1,3 +1,4 @@
+<%@ page import="com.geoshot.geoshotweb.classes.User" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,16 +11,18 @@
 <body>
     <div class="main">
         <%@include file="sidebar.jsp"%>
-
+        <%
+            User user = (User) request.getAttribute("user");
+        %>
         <div class="feeds">
             <div class="post-feed">
                 <div class="post-feed-identifier">
                     <div class="foto-usuario">
                         <img src="static/images/usuario.png" alt="foto do usuario">
                     </div>
-                    <div class="nome-usuario"><%= request.getAttribute("username") %></div>
+                    <div class="nome-usuario"><%= user.getUsername() %></div>
                 </div>
-                <h4>Minha taxa de acurácia: <%= request.getAttribute("accuracy") %> %</h4>
+                <h4>Minha taxa de acurácia: <%= user.getAccuracy() %> %</h4>
                 <div><a href="/my-challs">Meus Desafios:</a> 45</div>
                 <div><a href="/my-attempts">Resolvidos por mim:</a> 25</div>
                 <div><a href="/edit-perfil">Editar perfil</a></div>
