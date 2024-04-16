@@ -26,7 +26,7 @@ public class EditPerfilServlet extends HttpServlet {
             usersDAO UserManager = new usersDAO();
             User thisUser = UserManager.getUser(username);
             request.setAttribute("user",thisUser);
-            request.getRequestDispatcher("PAGINA-JSP").forward(request,response);
+            request.getRequestDispatcher("editPerfil.jsp").forward(request,response);
         }
 
     }
@@ -70,7 +70,7 @@ public class EditPerfilServlet extends HttpServlet {
                 if(noMatchNewPassword)    request.setAttribute("non-equal-password","non-equal-password");
                 if(noOldPasswordOnUpdate) request.setAttribute("no-old-password-on-update","no-old-password-on-update");
                 request.setAttribute("user",thisUser);
-                request.getRequestDispatcher("PAGINA-JSP").forward(request,response);
+                request.getRequestDispatcher("editPerfil.jsp").forward(request,response);
             } else {
 
 

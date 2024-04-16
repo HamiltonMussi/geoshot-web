@@ -39,9 +39,6 @@
 
                 <button class="btn-submit" >Cadastrar</button>
             </form>
-            <%= request.getAttribute("non-equals-password") %> <br>
-            <%= request.getAttribute("already-username") %> <br>
-            <%= request.getAttribute("already-email") %> <br>
         </div>
 
     </div>
