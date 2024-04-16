@@ -44,8 +44,8 @@ public class EditPerfilServlet extends HttpServlet {
         if(username == null) {
             response.sendRedirect("/home");
         } else {
-            usersDAO verifyUser = new usersDAO();
-            User thisUser = verifyUser.getUser(username);
+            usersDAO UserManager = new usersDAO();
+            User thisUser = UserManager.getUser(username);
             String oldPassword = request.getParameter("old-password");
             String newPassword = request.getParameter("password");
             String newConfirmPassword = request.getParameter("confirm-password");
@@ -83,10 +83,16 @@ public class EditPerfilServlet extends HttpServlet {
                 request.getRequestDispatcher("PAGINA-JSP").forward(request,response);
             } else {
 
+
+                if(!newPassword.isEmpty()) {
+                    // Editar Apenas Senha;
+                    UserManager.changePasswordFromUser(username,newPassword);
+
+                }
+
                 if(!encodedPhoto.isEmpty()) {
-                    // Muda a foto;
-                } else {
-                    // Muda só a senha;
+                    // Editar Apenas photo;
+                    UserManager.changePhotoFromUser(username,encodedPhoto);
                 }
 
                 response.sendRedirect("/perfil");
