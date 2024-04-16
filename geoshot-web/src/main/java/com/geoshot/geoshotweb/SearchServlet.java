@@ -30,7 +30,7 @@ public class SearchServlet extends HttpServlet {
 
             request.setAttribute("username",username);
 
-            request.getRequestDispatcher("PAGINA-DA-PESQUISA-JSP").forward(request,response);
+            request.getRequestDispatcher("search.jsp").forward(request,response);
 
         }
 
@@ -54,20 +54,22 @@ public class SearchServlet extends HttpServlet {
 
             User searchedUser = UserManager.getUser(searchedUsername);
 
+            request.setAttribute("username", username);
+
             if(searchedUser == null) {
                 // não tem esse usuário!
 
                 request.setAttribute("user-not-found","user-not-found");
-                request.getRequestDispatcher("PAGINA-DA-PESQUISA-JSP").forward(request,response);
+                request.getRequestDispatcher("search.jsp").forward(request,response);
 
             } else {
 
                 boolean userFollows = UserManager.follows(username,searchedUsername);
 
                 request.setAttribute("followship-state",userFollows);
-                request.setAttribute("User", searchedUser);
+                request.setAttribute("user", searchedUser);
 
-                request.getRequestDispatcher("PAGINA-DA-PESQUISA-JSP").forward(request,response);
+                request.getRequestDispatcher("search.jsp").forward(request,response);
 
 
             }
