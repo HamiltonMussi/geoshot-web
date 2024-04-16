@@ -17,9 +17,9 @@
 
             <%
                 // Retrieve the list of Feed objects from the request
-                List<MyAttempt> feedList = (List<MyAttempt>) request.getAttribute("attemptslist");
-                if (feedList != null) {
-                    for (MyAttempt myAttempt : feedList) {
+                List<MyAttempt> myAttemptsList = (List<MyAttempt>) request.getAttribute("attemptslist");
+                if (!myAttemptsList.isEmpty()) {
+                    for (MyAttempt myAttempt : myAttemptsList) {
             %>
 
             <div class="post-feed">
@@ -43,7 +43,7 @@
                     }
                 }
              else {%>
-            <div>Voce não resolveu nenhum desafio ainda! Go get'em tiger!</div>
+            <h2>Voce não resolveu nenhum desafio ainda! Go get'em tiger!</h2>
             <% } %>
         </div>
     </div>
