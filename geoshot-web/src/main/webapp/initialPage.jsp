@@ -37,7 +37,11 @@
             </div>
             Date Of Creaton: <%= feed.getDateOfCreation()%>
             <div>
-                <button class="btn-shot">shot</button>
+                <form class="btn-shot" action="/initial-page" method="POST">
+                    <input type="hidden" value="<%= feed.getPubId() %>" name="pub_id">
+
+                    <button type="submit" class="btn-shot">shot</button>
+                </form>
             </div>
         </div>
 
