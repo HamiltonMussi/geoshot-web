@@ -1,6 +1,5 @@
 <%@ page import="com.geoshot.geoshotweb.classes.Feed" %>
 <%@ page import="java.util.List" %>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,52 +8,49 @@
     <link rel="stylesheet" href="static/styles/allStyles.css">
 </head>
 <body>
-<div class="main">
-    <%@include file="sidebar.jsp"%>
+    <div class="main">
+        <%@include file="sidebar.jsp"%>
 
-    <div class="feeds">
-        <h1>Pagina Inicial de <%= request.getAttribute("username") %> </h1>
+        <div class="feeds">
+            <h1>Pagina Inicial de <%= request.getAttribute("username") %> </h1>
 
-        <%
-            // Retrieve the list of Feed objects from the request
-            List<Feed> feedList = (List<Feed>) request.getAttribute("feedlist");
-            if (feedList != null) {
-                for (Feed feed : feedList) {
-        %>
+            <%
+                // Retrieve the list of Feed objects from the request
+                List<Feed> feedList = (List<Feed>) request.getAttribute("feedlist");
+                if (feedList != null) {
+                    for (Feed feed : feedList) {
+            %>
 
-        <div class="post-feed">
-            <div class="post-feed-identifier">
-                <div class="foto-usuario">
-                    <img src="static/images/usuario.png">
-                    <%= feed.getUserPhoto() %>
+            <div class="post-feed">
+                <div class="post-feed-identifier">
+                    <div class="foto-usuario">
+                        <img src="static/images/usuario.png">
+                        <%= feed.getUserPhoto() %>
+                    </div>
+                    <div class="nome-usuario"><%= feed.getUsername() %></div>
                 </div>
-                <div class="nome-usuario"><%= feed.getUsername() %></div>
+                <div class="foto-desafio">
+                    <img src="static/images/paisagem.jpg">
+                    <%= feed.getPhoto() %>
+                    <%= feed.getPubId() %>
+                </div>
+                Date Of Creaton: <%= feed.getDateOfCreation()%>
+                <div>
+                    <form action="/initial-page" method="POST">
+                        <input type="hidden" value="<%= feed.getPubId() %>" name="pub-id">
+
+                        <button type="submit" class="btn-shot">shot</button>
+                    </form>
+                </div>
             </div>
-            <div class="foto-desafio">
-                <img src="static/images/paisagem.jpg">
-                <%= feed.getPhoto() %>
-                <%= feed.getPubId() %>
-            </div>
-            Date Of Creaton: <%= feed.getDateOfCreation()%>
+
+            <%
+                }
+            } %>
             <div>
-                <form class="btn-shot" action="/initial-page" method="POST">
-                    <input type="hidden" value="<%= feed.getPubId() %>" name="pub_id">
-
-                    <button type="submit" class="btn-shot">shot</button>
-                </form>
+                <h2>Não há mais desafios! Go get'em tiger!</h2>
             </div>
         </div>
-
-        <%
-            }
-        }
-        else {
-        %>
-        <div>
-            <h2>Não há desafios! Go get'em tiger!</h2>
-        </div>
-        <% } %>
     </div>
-</div>
 </body>
 </html>

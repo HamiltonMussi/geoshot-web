@@ -148,6 +148,10 @@ body * {
     background-color: #4de461;
 }
 
+.btn-delete {
+    margin: 0;
+}
+
 .dados-meus-desafios {
     display: flex;
 }
