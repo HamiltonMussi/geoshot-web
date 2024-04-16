@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.geoshot.geoshotweb.classes.Feed" %>
 <%@ page import="java.util.List" %>
 <html lang="en">
@@ -17,7 +18,7 @@
             <%
                 // Retrieve the list of Feed objects from the request
                 List<Feed> feedList = (List<Feed>) request.getAttribute("feedlist");
-                if (feedList != null) {
+                if (!feedList.isEmpty()) {
                     for (Feed feed : feedList) {
             %>
 

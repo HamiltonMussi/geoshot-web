@@ -27,7 +27,7 @@ public class MyAttemptsServlet  extends HttpServlet {
 
             request.setAttribute("username",username);
             request.setAttribute("attemptslist", attemptslist);
-            request.getRequestDispatcher("MINHAS-TENTATIVAS-JSP").forward(request,response);
+            request.getRequestDispatcher("myAttempts.jsp").forward(request,response);
         }
 
     }

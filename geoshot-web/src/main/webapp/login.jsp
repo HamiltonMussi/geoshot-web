@@ -17,8 +17,8 @@
         <% } %>
         <form class="form-login" action="/login" method="POST">
             <div class="textfield">
-                <label for="username">Username ou e-mail</label>
-                <input id="username" type="text" name="username" placeholder="Digite seu username ou e-mail">
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username" placeholder="Digite seu username">
             </div>
             <div class="textfield">
                 <label for="password">Senha</label>
