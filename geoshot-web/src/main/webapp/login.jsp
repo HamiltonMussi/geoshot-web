@@ -1,3 +1,4 @@
+<%@ page contentType="text/html" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,7 +10,11 @@
 <body>
 <div class="main-login">
     <div class="card-login">
+        <div class="logo"></div>
         <h1>Login</h1>
+        <% if(request.getAttribute("nologin") != null){ %>
+        <p class="error-message">Seu login ou senha estão incorretos!</p>
+        <% } %>
         <form class="form-login" action="/login" method="POST">
             <div class="textfield">
                 <label for="username">Username ou e-mail</label>
@@ -21,9 +26,10 @@
             </div>
             <button class="btn-submit" >Login</button>
         </form>
+        <a href="/signup">Inscreva-se</a>
+        <a href="/forgot-password">Esqueci minha senha</a>
     </div>
-    <a href="/signup">Inscreva-se</a>
-    <a href="/forgot-password">Esqueci minha senha</a>
+
 </div>
 </body>
 </html>

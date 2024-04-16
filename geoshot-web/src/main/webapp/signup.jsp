@@ -10,7 +10,11 @@
 <body>
     <div class="main-login">
         <div class="card-login">
+            <div class="logo"></div>
             <h2>Cadastre-se</h2>
+            <% if (request.getAttribute("non-equals-password") != null) { %>
+            <div class="error-message">Suas senhas não batem!</div>
+            <% } %>
             <form class="form-login" action="/signup" method="POST">
                 <div class="textfield">
                     <label for="name">Nome</label>
@@ -35,10 +39,11 @@
 
                 <button class="btn-submit" >Cadastrar</button>
             </form>
+            <%= request.getAttribute("non-equals-password") %> <br>
+            <%= request.getAttribute("already-username") %> <br>
+            <%= request.getAttribute("already-email") %> <br>
         </div>
-        <%= request.getAttribute("non-equals-password") %> <br>
-        <%= request.getAttribute("already-username") %> <br>
-        <%= request.getAttribute("already-email") %> <br>
+
     </div>
 </body>
 </html>
