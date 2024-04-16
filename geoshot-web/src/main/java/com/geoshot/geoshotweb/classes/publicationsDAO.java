@@ -10,11 +10,10 @@ public class publicationsDAO {
 
 //    public static void main(String[] args) {
 //        publicationsDAO hop = new publicationsDAO();
-//        for(Feed f: hop.getFeedFromUser("BruceLee")) {
-//            System.out.println(f.getUsername());
+//        for(Publication hopper: hop.getMyPublications("laplace")) {
+//            System.out.println(hopper.getPubId());
 //        }
 //    }
-
 
     private Connection dbconnection;
 
@@ -83,19 +82,23 @@ public class publicationsDAO {
 
         try {
 
-            String queryString = String.format("SELECT pub_id, correct_value, owner_user_id, photo, date_of_creation" +
-                    "FROM publications p" +
-                    "WHERE pub_id=\"%s\"",pubId);
+            String queryString = String.format("SELECT pub_id, correct_value, owner_user_id, photo, date_of_creation " +
+                    "FROM publications p " +
+                    "WHERE pub_id=%d",pubId);
+
+            System.out.println(queryString);
 
             PreparedStatement stmt = this.dbconnection.prepareStatement(queryString);
 
             ResultSet result = stmt.executeQuery();
 
+            result.next();
+
             publication = new Publication(
                     pubId,
                     result.getInt("owner_user_id"),
                     result.getString("photo"),
-                    result.getString("dateOfCreation"),
+                    result.getString("date_of_creation"),
                     result.getInt("correct_value")
             );
 
@@ -136,8 +139,86 @@ public class publicationsDAO {
         } catch(SQLException ex) {
             System.out.println(ex.getMessage());
         }
-
         return feed;
     }
 
+    public List<MyAttempt> getMyAttempts(String username) {
+        List<MyAttempt> myAttempts = new ArrayList<>();
+
+        try {
+
+            String queryString = String.format("SELECT p.pub_id as pub_id, u.photo as userphoto, u.username as username, p.photo as photo, " +
+                    "a.attempt_date as attempt_date, a.accuracy as accuracy FROM " +
+                    "attempts a INNER JOIN publications p ON p.pub_id = a.pub_id " +
+                    "INNER JOIN users u ON u.usr_id = a.owner_att_usr_id " +
+                    "WHERE u.username=\"%s\"", username);
+
+            PreparedStatement stmt = this.dbconnection.prepareStatement(queryString);
+
+            ResultSet results = stmt.executeQuery();
+
+            while (results.next()) {
+                myAttempts.add(new MyAttempt(results.getInt("pub_id"),
+                        results.getDouble("accuracy"),
+                        results.getString("photo"),
+                        results.getString("userphoto"),
+                        results.getString("attempt_date"),
+                        results.getString("username")
+                ));
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return myAttempts;
+
+    }
+
+    public List<Publication> getMyPublications(String username) {
+        List<Publication> publications = new ArrayList<>();
+
+        try {
+
+            String queryString = String.format("SELECT pub_id, owner_user_id, photo, date_of_creation, correct_value FROM publications p " +
+                    "WHERE p.owner_user_id = (SELECT u.usr_id FROM users u WHERE u.username=\"%s\")",username);
+
+            PreparedStatement stmt = this.dbconnection.prepareStatement(queryString);
+
+            ResultSet results = stmt.executeQuery();
+
+            while(results.next()) {
+                publications.add(
+                        new Publication(
+                                results.getInt("pub_id"),
+                                results.getInt("owner_user_id"),
+                                results.getString("photo"),
+                                results.getString("date_of_creation"),
+                                results.getInt("correct_value")
+                        )
+                );
+            }
+
+        } catch(SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return publications;
+    }
+
+    public void removePublicationById(int pubId) {
+
+        try {
+            String queryString = String.format("DELETE FROM publications " +
+                    "WHERE pub_id = %d", pubId);
+
+            PreparedStatement stmt = this.dbconnection.prepareStatement(queryString);
+
+            stmt.executeQuery();
+
+        } catch(SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+    }
 }
