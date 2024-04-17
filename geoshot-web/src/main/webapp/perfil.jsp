@@ -17,22 +17,21 @@
             User user = (User) request.getAttribute("user");
         %>
         <div class="feeds">
-            <div class="post-feed">
-                <div class="post-feed-identifier">
+                <div class="perfil-identifier">
+                    <% if(user.getPhoto().equals("default-photo")) { %>
+                    <img src="static/images/default-user-photo.png">
+                    <% }
+                    else { %>
+                    <img src="data:image/jpeg;base64,<%= user.getPhoto() %>"/>
+                    <% } %>
 
-                    <div class="foto-usuario">
-                        <img src="data:image/jpeg;base64,<%= user.getPhoto() %>"/>
-                    </div>
-
-                    <div class="nome-usuario"><%= user.getUsername() %></div>
+                    <div class="nome-perfil"><%= user.getUsername() %></div>
                 </div>
-                <h4>Minha taxa de acurácia: <%= user.getAccuracy() %> %</h4>
+                <h3>Minha taxa de acurácia: <%= user.getAccuracy() %> %</h3>
                 <div><a href="/my-challs">Meus Desafios</a></div>
                 <div><a href="/my-attempts">Resolvidos por mim:</a> <%= user.getAttempts() %> </div>
                 <div><a href="/edit-perfil">Editar perfil</a></div>
-            </div>
         </div>
     </div>
-
 </body>
 </html>
