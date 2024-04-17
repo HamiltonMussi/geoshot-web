@@ -12,8 +12,8 @@ public class PhotoConverter {
 
 //    public static void main(String[] args) {
 //        String gay = encoder("/home/laplace/Downloads/laplace.jpg");
-////        File photo = decoder(gay);
-////        System.out.println(photo.getAbsoluteFile());
+//        File photo = decoder(gay);
+//        System.out.println(photo.getAbsoluteFile());
 //        System.out.println(gay);
 //    }
 

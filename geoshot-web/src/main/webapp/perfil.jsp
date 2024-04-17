@@ -19,9 +19,11 @@
         <div class="feeds">
             <div class="post-feed">
                 <div class="post-feed-identifier">
+
                     <div class="foto-usuario">
-                        <img src="static/images/usuario.png" alt="foto do usuario">
+                        <img src="data:image/jpeg;base64,<%= user.getPhoto() %>"/>
                     </div>
+
                     <div class="nome-usuario"><%= user.getUsername() %></div>
                 </div>
                 <h4>Minha taxa de acurácia: <%= user.getAccuracy() %> %</h4>

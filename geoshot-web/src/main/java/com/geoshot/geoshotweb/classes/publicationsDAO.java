@@ -41,7 +41,7 @@ public class publicationsDAO {
 
             stmt.setString(1,publication.getPhoto());
             stmt.setInt(2,publication.getOwnerUserId());
-            stmt.setInt(3,publication.getCorrectValue());
+            stmt.setString(3,publication.getCorrectValue());
 
             return stmt.executeUpdate();
 
@@ -51,11 +51,11 @@ public class publicationsDAO {
         }
     }
 
-    public int insertPublication(String photo, int ownerUserId, int correctValue) {
+    public int insertPublication(String photo, int ownerUserId, String correctValue) {
         return this.insertPublication(new Publication(0,ownerUserId,photo,"",correctValue));
     }
 
-    public int insertPublication(String photo, String username, int correctValue) {
+    public int insertPublication(String photo, String username, String correctValue) {
         try {
             String queryString = String.format("SELECT users.usr_id as usr_id FROM users WHERE users.username = \"%s\"", username);
 
@@ -86,8 +86,6 @@ public class publicationsDAO {
                     "FROM publications p " +
                     "WHERE pub_id=%d",pubId);
 
-            System.out.println(queryString);
-
             PreparedStatement stmt = this.dbconnection.prepareStatement(queryString);
 
             ResultSet result = stmt.executeQuery();
@@ -99,7 +97,7 @@ public class publicationsDAO {
                     result.getInt("owner_user_id"),
                     result.getString("photo"),
                     result.getString("date_of_creation"),
-                    result.getInt("correct_value")
+                    result.getString("correct_value")
             );
 
         } catch(SQLException ex) {
@@ -194,7 +192,7 @@ public class publicationsDAO {
                                 results.getInt("owner_user_id"),
                                 results.getString("photo"),
                                 results.getString("date_of_creation"),
-                                results.getInt("correct_value")
+                                results.getString("correct_value")
                         )
                 );
             }
