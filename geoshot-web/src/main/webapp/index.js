@@ -1,20 +1,13 @@
 let new_position = { lat: -22.955833, lng: -43.166667 }
-
-// function handleConfirmGuess() {
-//     let stored_position = localStorage.getItem("new_position")
-//     console.log(stored_position)
-// }
-
 document.getElementById('guessForm').addEventListener('submit', function(event) {
-    // Verificar se o valor 'new_position' existe no localStorage
-    if (localStorage.getItem('new_position')) {
-        // Obter o valor 'new_position' do localStorage
-        const stored_position = localStorage.getItem('new_position');
-        const position_touple = [stored_position.lat, stored_position.lng];
-        console.log(position_touple)
-        // Definir o valor do input hidden no formulário
-        document.getElementById('newPositionInput').value = position_touple;
+    let stored_position = localStorage.getItem("new_position")
+    let position_touple = [-22.955833, -43.166667]
+    if (stored_position) {
+        stored_position = JSON.parse(stored_position);
+        position_touple = [stored_position.lat, stored_position.lng];
     }
+    console.log(position_touple)
+    document.getElementById('newPositionInput').value = position_touple;
 });
 
 function initMap() {
