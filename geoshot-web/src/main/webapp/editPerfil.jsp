@@ -14,15 +14,22 @@
         <div class="hidden"></div>
 
         <% User user = (User) request.getAttribute("user"); %>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data" class="form-trocar-foto">
             <div class="post-feed-identifier">
-                <div class="foto-usuario">
-                    <img src="data:image/jpeg;base64,<%= user.getPhoto() %>" alt="user-photo">
+                <div class="foto-usuario" style="margin-left: 45px;">
+                    <% if(user.getPhoto().equals("default-photo")) { %>
+                    <img src="static/images/default-user-photo.png">
+                    <% }
+                    else { %>
+                    <img src="data:image/jpeg;base64,<%= user.getPhoto() %>"/>
+                    <% } %>
                 </div>
-                <div class="nome-usuario"><%= user.getUsername() %></div>
                 <div>
-                    <label for="imageFile">Trocar foto: </label>
-                    <input type="file" id="imageFile" name="photo" >
+                    <div class="nome-usuario"><%= user.getUsername() %></div>
+                    <div class="trocar-foto">
+                        <label for="imageFile">Trocar foto: </label>
+                        <input type="file" id="imageFile" name="photo" >
+                    </div>
                 </div>
             </div>
 
@@ -35,7 +42,7 @@
                 <input id="confirm-password" type="password" name="confirm-password" placeholder="Confirme sua nova senha">
             </div>
             <div class="textfield">
-                <label for="old-password">Nova senha</label>
+                <label for="old-password">Senha atual</label>
                 <input id="old-password" type="password" name="old-password" placeholder="Digite sua senha atual">
             </div>
             <button type="submit" class="btn-submit">Trocar</button>
