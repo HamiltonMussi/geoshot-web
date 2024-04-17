@@ -145,10 +145,11 @@ public class publicationsDAO {
 
         try {
 
-            String queryString = String.format("SELECT p.pub_id as pub_id, u.photo as userphoto, u.username as username, p.photo as photo, " +
+            String queryString = String.format("SELECT p.pub_id as pub_id, uu.photo as userphoto, uu.username as username, p.photo as photo, " +
                     "a.attempt_date as attempt_date, a.accuracy as accuracy FROM " +
                     "attempts a INNER JOIN publications p ON p.pub_id = a.pub_id " +
-                    "INNER JOIN users u ON u.usr_id = p.owner_user_id " +
+                    "INNER JOIN users u  ON u.usr_id = a.owner_att_usr_id " +
+                    "INNER JOIN users uu ON uu.usr_id = p.owner_user_id " +
                     "WHERE u.username=\"%s\"", username);
 
             PreparedStatement stmt = this.dbconnection.prepareStatement(queryString);
