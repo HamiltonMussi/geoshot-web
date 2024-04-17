@@ -20,7 +20,7 @@ public class ChallServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
 
-        if(username == null) {
+        if (username == null) {
             response.sendRedirect("/home");
         } else {
 
@@ -30,23 +30,23 @@ public class ChallServlet extends HttpServlet {
 
             Publication thisPublication = PublicationManager.getPublicationById(pubId);
 
-            request.setAttribute("publication",thisPublication);
+            request.setAttribute("publication", thisPublication);
 
-            request.getRequestDispatcher("chall.jsp").forward(request,response);
+            request.getRequestDispatcher("chall.jsp").forward(request, response);
 
         }
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
-        String username     = (String) session.getAttribute("username");
+        String username = (String) session.getAttribute("username");
 
-        if(username == null) {
+        if (username == null) {
             response.sendRedirect("/home");
         } else {
             int pubId = Integer.parseInt((String) request.getParameter("pub-id"));
 
-            String userAnswerString   = ((String) request.getParameter("user-answer"));
+            String userAnswerString = ((String) request.getParameter("user-answer"));
 
             publicationsDAO PublicationManager = new publicationsDAO();
 
@@ -54,14 +54,16 @@ public class ChallServlet extends HttpServlet {
 
             String correctValue = thisPublication.getCorrectValue();
 
-            double accuracy = CalculateAccuracy.getAccuracy(correctValue,userAnswerString); // Faremos esse calculo quando Hamilton terminar API Google;
+            double accuracy = CalculateAccuracy.getAccuracy(correctValue, userAnswerString); // Faremos esse calculo quando Hamilton terminar API Google;
 
             attemptsDAO AttemptManager = new attemptsDAO();
 
-            AttemptManager.insertAttempt(pubId,username,accuracy);
+            AttemptManager.insertAttempt(pubId, username, accuracy);
 
             response.sendRedirect("/my-attempts");
         }
 
 
     }
+
+}

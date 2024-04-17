@@ -1,10 +1,4 @@
-<%@ page import="com.geoshot.geoshotweb.classes.Publication" %><%--
-  Created by IntelliJ IDEA.
-  User: itomussi
-  Date: 16/04/24
-  Time: 15:35
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="com.geoshot.geoshotweb.classes.Publication" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
