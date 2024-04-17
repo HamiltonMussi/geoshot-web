@@ -5,7 +5,7 @@ CREATE TABLE `publications` (
   `photo` mediumtext NOT NULL,
   `owner_user_id` int(11) NOT NULL,
   `date_of_creation` datetime NOT NULL DEFAULT current_timestamp(),
-  `correct_value` int(11) NOT NULL,
+  `correct_value` varchar(50) NOT NULL,
   PRIMARY KEY (`pub_id`),
   KEY `publications_users_FK` (`owner_user_id`),
   CONSTRAINT `publications_users_FK` FOREIGN KEY (`owner_user_id`) REFERENCES `users` (`usr_id`) ON DELETE CASCADE ON UPDATE CASCADE
