@@ -65,5 +65,3 @@ public class ChallServlet extends HttpServlet {
 
 
     }
-
-}

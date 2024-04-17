@@ -1,4 +1,4 @@
-<%@ page import="com.geoshot.geoshotweb.classes.Publication" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -11,6 +11,8 @@
 <body>
     <div class="main">
         <%@include file="sidebar.jsp"%>
+
+        <div class="hidden"></div>
 
         <div class="post-feed">
             <div class="post-feed-identifier">

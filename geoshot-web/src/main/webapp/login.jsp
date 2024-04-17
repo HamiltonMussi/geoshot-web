@@ -1,4 +1,4 @@
-<%@ page contentType="text/html" pageEncoding="UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,10 +10,12 @@
 <body>
 <div class="main-login">
     <div class="card-login">
-        <div class="logo"></div>
+
+        <a href="/"><img src="static/images/Geoshot-logo120px.png" class="logo"></a>
+
         <h1>Login</h1>
         <% if(request.getAttribute("nologin") != null){ %>
-        <p class="error-message">Seu login ou senha estão incorretos!</p>
+        <div class="error-message">Seu login ou senha estão incorretos!</div>
         <% } %>
         <form class="form-login" action="/login" method="POST">
             <div class="textfield">
