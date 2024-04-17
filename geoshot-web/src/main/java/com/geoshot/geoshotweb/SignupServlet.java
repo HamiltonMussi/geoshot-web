@@ -36,6 +36,11 @@ public class SignupServlet extends HttpServlet {
 
         boolean mustRepeat = false;
 
+        if(password.isEmpty()) {
+            request.setAttribute("no-password","no-password");
+            mustRepeat = true;
+        }
+
         if(!confirmPassword.equals(password)) {
             request.setAttribute("non-equals-password","non-equals-password");
             mustRepeat = true;

@@ -1,0 +1,34 @@
+<%@ page import="com.geoshot.geoshotweb.classes.Publication" %><%--
+  Created by IntelliJ IDEA.
+  User: itomussi
+  Date: 16/04/24
+  Time: 15:35
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Draggable Advanced Marker</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="static/styles/challStyle.css" />
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+<div class="topRow">
+    <div id="map"></div>
+</div>
+<div class="bottomRow">
+    <form method="post" action="/chall" id="guessForm">
+        <input type="hidden" value="<%= ((Publication) request.getAttribute("publication")).getPubId() %>" name="pub-id">
+        <input type="hidden" id="newPositionInput" name="user-answer">
+        <button type="submit">Te achei!</button>
+    </form>
+</div>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=marker&v=beta"
+        defer
+></script>
+<script src="index.js"></script>
+</body>
+</html>

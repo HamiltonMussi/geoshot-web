@@ -35,13 +35,12 @@ public class CreateChallServlet extends HttpServlet {
             InputStream inputStream = filepart.getInputStream();
             String encodedPhoto = PhotoConverter.encoder(inputStream.readAllBytes());
 
-            String scorrectValue = request.getParameter("anwser");
+            String correctValue = request.getParameter("anwser");
 
-            if(encodedPhoto.isEmpty() || scorrectValue.isEmpty()) {
+            if(encodedPhoto.isEmpty() || correctValue.isEmpty()) {
                 request.setAttribute("missing","missing");
                 request.getRequestDispatcher("createchall.jsp").forward(request,response);
             } else {
-                int correctValue = Integer.parseInt(scorrectValue);
 
                 publicationsDAO PublicationManager = new publicationsDAO();
 

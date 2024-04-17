@@ -27,7 +27,7 @@ public class attemptsDAO {
 
     public int insertAttempt(Attempt attempt) {
         try {
-            String queryString = "INSERT INTO publications (pub_id,owner_att_usr_id,accuracy)";
+            String queryString = "INSERT INTO attempts (pub_id,owner_att_usr_id,accuracy)";
             queryString += " VALUES (?,?,?)";
 
             PreparedStatement stmt = this.dbconnection.prepareStatement(queryString);

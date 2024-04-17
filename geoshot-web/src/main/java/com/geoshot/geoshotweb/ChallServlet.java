@@ -1,5 +1,6 @@
 package com.geoshot.geoshotweb;
 
+import com.geoshot.geoshotweb.classes.CalculateAccuracy;
 import com.geoshot.geoshotweb.classes.Publication;
 import com.geoshot.geoshotweb.classes.attemptsDAO;
 import com.geoshot.geoshotweb.classes.publicationsDAO;
@@ -23,7 +24,7 @@ public class ChallServlet extends HttpServlet {
             response.sendRedirect("/home");
         } else {
 
-            int pubId = Integer.parseInt((String) request.getParameter("pub_id"));
+            int pubId = Integer.parseInt((String) request.getParameter("pub-id"));
 
             publicationsDAO PublicationManager = new publicationsDAO();
 
@@ -31,7 +32,7 @@ public class ChallServlet extends HttpServlet {
 
             request.setAttribute("publication",thisPublication);
 
-            request.getRequestDispatcher("PAGINA-DESAFIO-UNICO-JSP").forward(request,response);
+            request.getRequestDispatcher("chall.jsp").forward(request,response);
 
         }
     }
@@ -43,18 +44,17 @@ public class ChallServlet extends HttpServlet {
         if(username == null) {
             response.sendRedirect("/home");
         } else {
-            int    pubId        = Integer.parseInt((String) request.getParameter("pub-id"));
-            int    userAnwser   = Integer.parseInt((String) request.getParameter("user-anwser"));
+            int pubId = Integer.parseInt((String) request.getParameter("pub-id"));
+
+            String userAnswerString   = ((String) request.getParameter("user-answer"));
 
             publicationsDAO PublicationManager = new publicationsDAO();
 
             Publication thisPublication = PublicationManager.getPublicationById(pubId);
 
-            int correctValue = thisPublication.getCorrectValue();
+            String correctValue = thisPublication.getCorrectValue();
 
-            // Calculo da Pontuação;
-
-            double accuracy = 50.0; // Faremos esse calculo quando Hamilton terminar API Google;
+            double accuracy = CalculateAccuracy.getAccuracy(correctValue,userAnswerString); // Faremos esse calculo quando Hamilton terminar API Google;
 
             attemptsDAO AttemptManager = new attemptsDAO();
 

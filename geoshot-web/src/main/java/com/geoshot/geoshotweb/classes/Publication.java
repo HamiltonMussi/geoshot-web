@@ -1,9 +1,9 @@
 package com.geoshot.geoshotweb.classes;
 public class Publication {
-    private int pubId, ownerUserId, correctValue;
-    private String photo, dateOfCreation;
+    private int pubId, ownerUserId;
+    private String photo, dateOfCreation, correctValue;
 
-    public Publication(int pubId, int ownerUserId, String photo, String dateOfCreation, int correctValue) {
+    public Publication(int pubId, int ownerUserId, String photo, String dateOfCreation, String correctValue) {
         this.pubId          = pubId;
         this.correctValue   = correctValue;
         this.photo          = photo;
@@ -13,7 +13,7 @@ public class Publication {
 
     public int getPubId() { return this.pubId; }
 
-    public int getCorrectValue() { return this.correctValue; }
+    public String getCorrectValue() { return this.correctValue; }
 
     public String getPhoto() { return this.photo; }
 
