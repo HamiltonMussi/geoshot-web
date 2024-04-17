@@ -14,8 +14,17 @@
                <a href="/"><img src="static/images/Geoshot-logo120px.png" class="logo"></a>
             </div>
             <h1>Cadastre-se</h1>
+
             <% if (request.getAttribute("non-equals-password") != null) { %>
             <div class="error-message">Suas senhas não batem!</div>
+            <% } %>
+
+            <% if (request.getAttribute("already-email") != null) { %>
+            <div class="error-message">Este e-mail já está cadastrado!</div>
+            <% } %>
+
+            <% if (request.getAttribute("already-username") != null) { %>
+            <div class="error-message">Este username já está cadastrado!</div>
             <% } %>
             <form class="form-login" action="/signup" method="POST">
                 <div class="textfield">

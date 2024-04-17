@@ -1,5 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.geoshot.geoshotweb.classes.User" %>
-<%@ page contentType="text/html" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,6 +11,8 @@
 <body>
     <div class="main">
         <%@include file="sidebar.jsp"%>
+
+        <div class="hidden"></div>
         <%
             User user = (User) request.getAttribute("user");
         %>
