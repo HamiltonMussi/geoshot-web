@@ -1,5 +1,5 @@
-<%@ page import="com.geoshot.geoshotweb.classes.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.geoshot.geoshotweb.classes.User" %>
 <html>
 <head>
     <title>Geoshot - Pesquisar</title>
