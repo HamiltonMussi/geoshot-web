@@ -146,7 +146,7 @@ body * {
 }
 
 .textfield > input::placeholder {
-    font-size: 2vh;
+    font-size: 1em;
 }
 
 .btn-submit {
@@ -177,7 +177,7 @@ body * {
     color: white;
     border: 1px solid #f64040;
     border-radius: 10px;
-    background-color: rgb(255, 75, 75);
+    background-color: rgb(252, 105, 105);
 }
 
 /*  Fim de tela de login e cadastro  */
@@ -203,7 +203,7 @@ body * {
 }
 
 .div-link-menu-lateral {
-    margin: 30px;
+    margin: 0 30px;
 }
 
 .link-menu-lateral {
@@ -220,28 +220,31 @@ body * {
     font-size: 17pt;
 }
 
-.feeds {
+.feeds, .perfil {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
     color: white;
-
 }
 
 .post-feed {
-    margin: 0;
+    margin: 20px 0;
+    border-color: cornflowerblue;
+    border-style: solid;
+    border-width: 1px 0;
 }
 
-.post-feed-identifier {
+.post-feed-identifier, .perfil-identifier {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin: 10px 0;
 }
 
-.foto-usuario  img {
+.foto-usuario img {
     width: 100px;
     border-radius: 50%;
 }
@@ -263,6 +266,24 @@ body * {
     margin: 20px 60px;
 }
 
+.perfil-identifier img {
+    width: 200px;
+
+}
+
+.nome-perfil {
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 30pt;
+}
+
+.legenda {
+    margin: 20px 0;
+    font-size: 1em;
+}
+
 /* Botões */
 
 .btn-shot {
@@ -281,6 +302,8 @@ body * {
 .btn-delete {
     margin: 0;
 }
+
+/* Fim Botões */
 
 .dados-meus-desafios {
     display: flex;

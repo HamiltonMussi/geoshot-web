@@ -17,8 +17,7 @@
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="post-feed-identifier">
                 <div class="foto-usuario">
-                    <img src="static/images/usuario.png">
-                    <%= user.getPhoto() %>
+                    <img src="data:image/jpeg;base64,<%= user.getPhoto() %>" alt="user-photo">
                 </div>
                 <div class="nome-usuario"><%= user.getUsername() %></div>
                 <div>

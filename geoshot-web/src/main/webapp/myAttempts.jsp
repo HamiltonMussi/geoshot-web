@@ -27,18 +27,19 @@
             <div class="post-feed">
                 <div class="post-feed-identifier">
                     <div class="foto-usuario">
-                        <img src="static/images/usuario.png">
-                        <%= myAttempt.getUserphoto() %>
+                        <% if(myAttempt.getUserphoto().equals("default-photo")) { %>
+                        <img src="static/images/default-user-photo.png">
+                        <% }
+                        else { %>
+                        <img src="data:image/jpeg;base64,<%= myAttempt.getUserphoto() %>"/>
+                        <% } %>
                     </div>
                     <div class="nome-usuario"><%= myAttempt.getUsername() %></div>
                 </div>
                 <div class="foto-desafio">
-                    <img src="static/images/paisagem.jpg">
-                    <%= myAttempt.getPhoto() %>
-                    <%= myAttempt.getPubId() %>
+                    <img src="data:image/jpeg;base64,<%= myAttempt.getPhoto() %>">
                 </div>
-                Date Of Creaton: <%= myAttempt.getAttemptDate()%>
-                <div>Minha acuracia: <%= myAttempt.getAccuracy() %></div>
+                <div class="legenda">Minha acuracia: <%= myAttempt.getAccuracy() %>%</div>
             </div>
 
             <%

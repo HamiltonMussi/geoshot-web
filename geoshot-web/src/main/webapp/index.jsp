@@ -14,10 +14,18 @@
                 <a href="/"><img src="static/images/Geoshot-logo100px.png" class="navbar-logo"></a>
             </div>
 
+            <%  String username = (String) session.getAttribute("username");
+            if (username == null) { %>
             <div class="navbar-area-2">
                 <a href="/login" class="navbar-link">Login</a>
                 <a href="/signup" class="navbar-link">Cadastre-se</a>
             </div>
+            <% }
+            else { %>
+            <div class="navbar-area-2">
+                <a href="/initial-page" class="navbar-link">Clique aqui para ir para ver seus feeds, <%= username %>!</a>
+            </div>
+            <% } %>
         </div>
 
         <div class="home-container">
