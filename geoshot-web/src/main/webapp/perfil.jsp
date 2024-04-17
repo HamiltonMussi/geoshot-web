@@ -17,21 +17,35 @@
             User user = (User) request.getAttribute("user");
         %>
         <div class="feeds">
-            <div class="post-feed">
-                <div class="post-feed-identifier">
-
-                    <div class="foto-usuario">
-                        <img src="data:image/jpeg;base64,<%= user.getPhoto() %>"/>
+            <div class="profile-card">
+                <div class="banner-zone">
+                    <div class="profile-zone">
+                        <div class="pic-mask"><img class="profile-pic" src=src="data:image/jpeg;base64,<%= user.getPhoto() %>"></div>
+                        <div class="user-nickname"><%= user.getUsername() %></div>
+                        <div class="profile-ac"><%= user.getAccuracy() %>%</div>
                     </div>
-
-                    <div class="nome-usuario"><%= user.getUsername() %></div>
                 </div>
-                <h4>Minha taxa de acurácia: <%= user.getAccuracy() %> %</h4>
-                <div><a href="/my-challs">Meus Desafios</a></div>
-                <div><a href="/my-attempts">Resolvidos por mim:</a> <%= user.getAttempts() %> </div>
-                <div><a href="/edit-perfil">Editar perfil</a></div>
+                <div class="info_zone">
+                    <a href="/my-challs"><button class="profile-info-button">Meus Desafios</button></a>
+                    <a href="/my-attempts"><button class="profile-info-button">Resolvidos por mim</button></a>
+                    <a href="/edit-perfil"><button class="profile-info-button">Editar perfil</button></a>
+                </div>
             </div>
         </div>
+<%--            <div class="profile-card">--%>
+<%--                <div class="banner-zone">--%>
+<%--                    <div class="profile-zone">--%>
+<%--                        <div class="pic-mask"><img class="profile-pic" src=src="data:image/jpeg;base64,<%= user.getPhoto() %>"></div>--%>
+<%--                        <div class="user-nickname"><%= user.getUsername() %></div>--%>
+<%--                        <div class="profile-ac"><%= user.getAccuracy() %>%</div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--                <div class="info_zone">--%>
+<%--                    <a href="/my-challs"><button class="profile-info-button">Meus Desafios</button></a>--%>
+<%--                    <a href="/my-attempts"><button class="profile-info-button">Resolvidos por mim</button></a>--%>
+<%--                    <a href="/edit-perfil"><button class="profile-info-button">Editar perfil</button></a>--%>
+<%--                </div>--%>
+<%--            </div>--%>
     </div>
 
 </body>
