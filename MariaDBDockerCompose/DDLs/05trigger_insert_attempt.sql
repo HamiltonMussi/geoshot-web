@@ -7,4 +7,4 @@ BEGIN
     SET accuracy = (users.attempts * users.accuracy + NEW.accuracy) / (users.attempts + 1),
         attempts = attempts + 1
     WHERE usr_id = NEW.owner_att_usr_id;
-END
+END;
