@@ -11,6 +11,10 @@ body * {
     box-sizing: border-box;
 }
 
+a:-webkit-any-link {
+    text-decoration: none !important;
+}
+
 /* Home */
 
 .main-home {
@@ -310,3 +314,96 @@ body * {
 }
 
 /*  configurações das páginas principais  */
+
+/*---PROFILE PAGE---*/
+.profile-card {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(90deg, rgba(27,27,152,1) 9%, rgba(5,10,48,1) 49%, rgba(22,22,157,1) 94%);
+    height: 30rem;
+    width: 40rem;
+    border-radius: 20px;
+    margin-top: 53px;
+}
+
+.banner-zone {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    height: 30%;
+    border-radius: 20px 20px 0 0;
+}
+
+.info_zone {
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    align-items: end;
+    justify-content: space-around;
+    padding: 5rem;
+}
+
+.profile-zone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.profile-info-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    background-color: #fff;
+    padding: 0 1rem 0 1rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-family: Roboto, sans-serif;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+.profile-info-button:hover {
+    cursor: pointer;
+}
+
+.profile-pic {
+    border-radius: 100%;
+    width: 10rem;
+    height: 10rem;
+    border: 6px solid #fff;
+}
+
+.pic-mask {
+    display: flex;
+    justify-content: center;
+}
+
+.user-nickname {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration-thickness: 5px;
+}
+
+.profile-ac {
+    display: flex;
+    justify-content: center;
+    border: 3px white solid;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 100%;
+    align-items: center;
+    color: #fff;
+    margin-top: 8px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    font-family: Roboto, sans-serif;
+}
+
+
