@@ -27,8 +27,8 @@
                     <div class="nome-usuario"><%= user.getUsername() %></div>
                 </div>
                 <h4>Minha taxa de acurácia: <%= user.getAccuracy() %> %</h4>
-                <div><a href="/my-challs">Meus Desafios:</a> 45</div>
-                <div><a href="/my-attempts">Resolvidos por mim:</a> 25</div>
+                <div><a href="/my-challs">Meus Desafios</a></div>
+                <div><a href="/my-attempts">Resolvidos por mim:</a> <%= user.getAttempts() %> </div>
                 <div><a href="/edit-perfil">Editar perfil</a></div>
             </div>
         </div>
