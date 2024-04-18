@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document | Perfil de Usuário</title>
+    <title>Geoshot | Perfil de Usuário</title>
     <link rel="stylesheet" href="static/styles/allStyles.css">
 </head>
 <body>
