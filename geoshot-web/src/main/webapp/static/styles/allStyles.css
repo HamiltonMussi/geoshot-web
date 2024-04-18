@@ -277,7 +277,30 @@ a:-webkit-any-link {
 
 .foto-usuario img {
     width: 100px;
-    border-radius: 50%;
+    border-radius: 100%;
+}
+
+.upload-new-photo {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.upload-new-photo + label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: black !important;
+    background-color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-family: Roboto, sans-serif;
+    padding: 0 1rem 0 1rem;
+    margin-right: 40px;
 }
 
 .form-trocar-foto, .form-search{
@@ -307,7 +330,7 @@ a:-webkit-any-link {
     padding: 10px;
     font-weight: bold;
     letter-spacing: 2px;
-    font-size: large;
+    font-size: 1.5rem;
     color: white;
 }
 

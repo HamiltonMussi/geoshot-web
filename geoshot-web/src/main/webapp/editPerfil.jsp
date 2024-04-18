@@ -25,8 +25,8 @@
                 <div>
                     <div class="nome-usuario"><%= user.getUsername() %></div>
                     <div class="trocar-foto">
-                        <label for="imageFile">Trocar foto: </label>
-                        <input type="file" id="imageFile" name="photo" >
+                        <input type="file" id="imageFile" name="photo" class="upload-new-photo" >
+                        <label for="imageFile">Trocar foto</label>
                     </div>
                 </div>
             </div>

@@ -9,6 +9,9 @@
     <script type="module" src="index.js"></script>
 </head>
 <body>
+    <div class="headerRow">
+        <a href="/initial-page"><img src="/static/images/left-icon.png"></a>
+    </div>
     <div class="topRow">
         <h1>Arreste o pino para a posição desejada</h1>
         <div id="map"></div>

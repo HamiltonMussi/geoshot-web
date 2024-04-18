@@ -9,21 +9,24 @@
     <script type="module" src="index.js"></script>
 </head>
 <body>
-<div class="topRow">
-    <h1>Arreste o pino para a posição desejada</h1>
-    <div id="map"></div>
-</div>
-<div class="bottomRow">
-    <form method="post" action="/chall" id="guessForm">
-        <input type="hidden" value="<%= ((Publication) request.getAttribute("publication")).getPubId() %>" name="pub-id">
-        <input type="hidden" id="newPositionInput" name="user-answer">
-        <button type="submit" class="chall-button">Te achei!</button>
-    </form>
-</div>
-<script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=marker&v=beta"
-        defer
-></script>
-<script src="index.js"></script>
+    <div class="headerRow">
+        <a href="/initial-page"><img src="/static/images/left-icon.png"></a>
+    </div>
+    <div class="topRow">
+        <h1>Arreste o pino para a posição desejada</h1>
+        <div id="map"></div>
+    </div>
+    <div class="bottomRow">
+        <form method="post" action="/chall" id="guessForm">
+            <input type="hidden" value="<%= ((Publication) request.getAttribute("publication")).getPubId() %>" name="pub-id">
+            <input type="hidden" id="newPositionInput" name="user-answer">
+            <button type="submit" class="chall-button">Te achei!</button>
+        </form>
+    </div>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=marker&v=beta"
+            defer
+    ></script>
+    <script src="index.js"></script>
 </body>
 </html>
