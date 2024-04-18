@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document | Pesquisar</title>
     <link rel="stylesheet" href="static/styles/allStyles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <div class="main">
@@ -17,8 +18,8 @@
 
             <form action="/search" method="POST" class="form-search">
                 <div class="textfield">
-                    <input type="text" name="searched-username" placeholder="Usuário a Pesquisar">
-                    <button class="btn-submit">Buscar</button>
+                    <input type="text" name="searched-username" placeholder="Usuário a Pesquisar ">
+                    <button class="btn-submit"><i class="bi bi-search"></i> Buscar</button>
                 </div>
             </form>
 
@@ -66,7 +67,7 @@
             <%
             } else if (error != null) {
             %>
-            <h2> Usuário não encontrado :(</h2>
+            <h2> Usuário não encontrado  <i class="bi bi-emoji-frown-fill"></i></h2>
             <%
                 }
             %>
