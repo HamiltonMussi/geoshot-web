@@ -28,8 +28,7 @@
             </div>
             <button class="btn-submit" >Login</button>
         </form>
-        <a href="/signup">Inscreva-se</a>
-        <a href="/forgot-password">Esqueci minha senha</a>
+        <a href="/signup" class="link-menu-lateral">Inscreva-se</a>
     </div>
 
 </div>
