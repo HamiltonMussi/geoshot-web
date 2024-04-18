@@ -172,6 +172,15 @@ a:-webkit-any-link {
     background: rgb(58, 58, 178);
 }
 
+.form-search .btn-submit {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.form-search input {
+    margin: 10px 0;
+}
+
 .error-message {
     width: 80%;
     height: 40px;
@@ -207,11 +216,11 @@ a:-webkit-any-link {
 }
 
 .div-link-menu-lateral {
-    margin: 0 30px;
+    margin: 30px;
 }
 
 .link-menu-lateral {
-    margin: 20px;
+    margin: 0 20px;
     padding: 10px;
     color: #a5bce8;
     font-size: 16pt;
@@ -224,13 +233,17 @@ a:-webkit-any-link {
     font-size: 17pt;
 }
 
-.feeds, .perfil {
+.feeds, .perfil, .search {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
     color: white;
+}
+
+.search {
+    padding-top: 80px;
 }
 
 .post-feed {
@@ -240,17 +253,53 @@ a:-webkit-any-link {
     border-width: 1px 0;
 }
 
-.post-feed-identifier, .perfil-identifier {
+.post-feed-identifier, .perfil-identifier, .user-identifier {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.user-identifier{
+    width: 70%;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+.user-identifier-cramp {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: 10px 0;
+    margin: 10px ;
 }
 
 .foto-usuario img {
     width: 100px;
     border-radius: 50%;
+}
+
+.form-trocar-foto, .form-search{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.trocar-foto input{
+    background: cornflowerblue;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    padding: 2px 10px;
+}
+
+.trocar-foto label {
+    color: white;
+    margin-left: 10px;
+    padding-left: 10px;
 }
 
 .nome-usuario {
@@ -259,10 +308,11 @@ a:-webkit-any-link {
     font-weight: bold;
     letter-spacing: 2px;
     font-size: large;
+    color: white;
 }
 
 .foto-desafio img {
-    width: 100%;
+    width: 947px;
 }
 
 .logo {
@@ -288,6 +338,23 @@ a:-webkit-any-link {
     font-size: 1em;
 }
 
+.legenda-my-challs {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.legenda-my-challs form {
+    margin: auto 0;
+}
+
+.no-more-challs {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 /* Botões */
 
 .btn-shot {
@@ -295,17 +362,55 @@ a:-webkit-any-link {
     height: 80px;
     font-size: 30pt;
     cursor: pointer;
-    background-color: #f66e6e;
+    border-radius: 16px;
+    background-color: #ee1b1b;
     color: white;
 }
 
 .btn-shot:hover {
-    background-color: #ee1b1b;
+    background-color: #f66e6e;
 }
 
 .btn-delete {
-    margin: 0;
+    margin:0;
+    padding: 10px;
+    border-radius: 10px;
+    background: #DC3545;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
 }
+
+.btn-delete:hover {
+    background: #BB2D3B;
+}
+
+.easter {
+    margin:50px;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.form-un-follow {
+    margin: auto 20px auto 0;
+    width: 40%;
+}
+
+.btn-un-follow {
+    margin: 0;
+    padding: 4px;
+    width: 100%;
+    height: 50px;
+    background: rgb(27,27,152);
+    background: linear-gradient(90deg, rgba(27,27,152,1) 9%, rgba(5,10,48,1) 49%, rgba(22,22,157,1) 94%);
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 
 /* Fim Botões */
 
@@ -405,5 +510,4 @@ a:-webkit-any-link {
     font-size: 0.7rem;
     font-family: Roboto, sans-serif;
 }
-
 

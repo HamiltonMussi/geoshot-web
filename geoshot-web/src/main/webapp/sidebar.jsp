@@ -19,3 +19,4 @@
         <a href="/logout" class="link-menu-lateral">Sair</a>
     </div>
 </div>
+<div class="hidden"></div>

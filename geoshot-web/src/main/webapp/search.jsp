@@ -2,48 +2,75 @@
 <%@ page import="com.geoshot.geoshotweb.classes.User" %>
 <html>
 <head>
-    <title>Geoshot - Pesquisar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document | Pesquisar</title>
+    <link rel="stylesheet" href="static/styles/allStyles.css">
 </head>
 <body>
-    <%=  request.getAttribute("username") %>
-    <form action="/search" method="POST">
-        <input type="text" name="searched-username" placeholder="Usuario a Pesquisar">
-        <button>Buscar</button>
-    </form>
+    <div class="main">
+        <%@include file="sidebar.jsp"%>
 
-    <%-- Exibir o nome de usuário ou mensagem de erro --%>
-    <%
-        User user = (User) request.getAttribute("user");
-        String error = (String) request.getAttribute("user-not-found");
+        <div class="search">
+            <% String thisUser = (String) request.getAttribute("username");  %>
+            <h2>Procure seus amigos pelo username, <%= thisUser %>!</h2>
 
-        if (user != null) {
-    %>
-    <form action="/toggle-followship" method="POST">
-        <p>Usuário encontrado: <%= user.getUsername() %></p>
-        <input type="hidden" value="<%= user.getUsername() %>" name="searched-username">
-        <%
-            if((boolean) request.getAttribute("followship-state")) {
-                %>
+            <form action="/search" method="POST" class="form-search">
+                <div class="textfield">
+                    <input type="text" name="searched-username" placeholder="Usuário a Pesquisar">
+                    <button class="btn-submit">Buscar</button>
+                </div>
+            </form>
 
-        <button> Deixar de Seguir </button>
+            <%-- Exibir o nome de usuário ou mensagem de erro --%>
+            <%
+                User user = (User) request.getAttribute("user");
+                String error = (String) request.getAttribute("user-not-found");
 
-        <%
-            } else {
-        %>
+                if (user != null) {
+            %>
 
-        <button> Seguir </button>
+            <div class="user-identifier">
+                <% if(thisUser.equals(user.getUsername())) { %>
+                <div class="easter">
+                    Por que está procurando a si mesmo, <%= thisUser %>? Está se sentindo solitário?
+                    Quer conversar com alguém? Está pensando em se matar?
+                </div>
+                <% } else {%>
+                <div class="user-identifier-cramp">
+                    <div class="foto-usuario">
+                        <% if(user.getPhoto().equals("default-photo")) { %>
+                        <img src="static/images/default-user-photo.png">
+                        <% }
+                        else { %>
+                        <img src="data:image/jpeg;base64,<%= user.getPhoto() %>"/>
+                        <% } %>
+                    </div>
+                    <div class="nome-usuario"><%= user.getUsername() %></div>
+                </div>
+                <form action="/toggle-followship" method="POST" class="form-un-follow">
+                    <input type="hidden" value="<%= user.getUsername() %>" name="searched-username">
+                    <%
+                        if((boolean) request.getAttribute("followship-state")) {
+                            %>
+                            <button class="btn-un-follow"> Deixar de Seguir </button>
+                    <%
+                        } else {
+                    %>
+                            <button class="btn-un-follow"> Seguir </button>
+                    <% } %>
+                </form>
+                <% } %>
+            </div>
 
-        <% } %>
-    </form>
-    <%
-    } else if (error != null) {
-    %>
-    <p> Usuario nao encontrado </p>
-    <%
-        }
-    %>
-
-
-
+            <%
+            } else if (error != null) {
+            %>
+            <h2> Usuário não encontrado :(</h2>
+            <%
+                }
+            %>
+        </div>
+    </div>
 </body>
 </html>

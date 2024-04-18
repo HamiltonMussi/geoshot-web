@@ -12,8 +12,6 @@
     <div class="main">
         <%@include file="sidebar.jsp"%>
 
-        <div class="hidden"></div>
-
         <div class="feeds">
             <h1>Tentativas de <%= request.getAttribute("username") %> </h1>
 
@@ -46,7 +44,7 @@
                     }
                 }
              else {%>
-            <h2>Voce não resolveu nenhum desafio ainda! Go get'em tiger!</h2>
+            <div class="no-more-challs"><h2>Voce não resolveu nenhum desafio ainda! Go get'em tiger!</h2></div>
             <% } %>
         </div>
     </div>

@@ -12,7 +12,6 @@
     <div class="main">
         <%@include file="sidebar.jsp"%>
 
-        <div class="hidden"></div>
         <div class="feeds">
             <h1>Pagina Inicial de <%= request.getAttribute("username") %> </h1>
 
@@ -30,14 +29,19 @@
             <div class="post-feed">
                 <div class="post-feed-identifier">
                     <div class="foto-usuario">
-                        <img src="data:image/jpeg;base64,<%= feed.getUserPhoto() %>" alt="user-photo">
+                        <% if(feed.getUserPhoto().equals("default-photo")) { %>
+                        <img src="static/images/default-user-photo.png">
+                        <% }
+                        else { %>
+                        <img src="data:image/jpeg;base64,<%= feed.getUserPhoto() %>"/>
+                        <% } %>
                     </div>
                     <div class="nome-usuario"><%= feed.getUsername() %></div>
                 </div>
                 <div class="foto-desafio">
                     <img src="data:image/jpeg;base64,<%= feed.getPhoto() %>">
                 </div>
-                Date Of Creation: <%= feed.getDateOfCreation()%>
+                <h6>Criado em: <%= feed.getDateOfCreation()%> </h6>
                 <div>
                     <form action="/chall" method="GET">
                         <input type="hidden" value="<%= feed.getPubId() %>" name="pub-id">
@@ -47,7 +51,7 @@
             </div>
 
                     <% } %>
-                    <div>
+                    <div class="no-more-challs">
                         <h2>Não há mais desafios! Go get'em tiger!</h2>
                     </div>
                 <% } %>

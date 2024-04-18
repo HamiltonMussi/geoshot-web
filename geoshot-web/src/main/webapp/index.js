@@ -14,7 +14,7 @@ document.getElementById('guessForm').addEventListener('submit', function(event) 
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
         center: new_position,
-        zoom: 14,
+        zoom: 2,
         mapId: "e576967f8fa06b97",
     });
     const infoWindow = new google.maps.InfoWindow();
