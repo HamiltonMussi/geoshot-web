@@ -17,21 +17,15 @@ function initMap() {
         zoom: 2,
         mapId: "e576967f8fa06b97",
     });
-    const infoWindow = new google.maps.InfoWindow();
     const draggableMarker = new google.maps.marker.AdvancedMarkerView({
         map,
         position: new_position,
         gmpDraggable: true,
-        title: "This marker is draggable.",
+        title: "Me arraste",
     });
     draggableMarker.addListener("dragend", (event) => {
         const position = draggableMarker.position;
-        localStorage.setItem('new_position', JSON.stringify(position))
-        infoWindow.close();
-        infoWindow.setContent(
-            `Pin dropped at: ${position.lat}, ${position.lng}`
-        );
-        infoWindow.open(draggableMarker.map, draggableMarker);
+        localStorage.setItem('new_position', JSON.stringify(position));
     });
 }
 window.initMap = initMap;

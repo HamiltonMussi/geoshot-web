@@ -19,7 +19,7 @@
             <div class="profile-card">
                 <div class="banner-zone">
                     <div class="profile-zone">
-                        <div class="pic-mask"><img class="profile-pic" src=src="data:image/jpeg;base64,<%= user.getPhoto() %>"></div>
+                        <div class="pic-mask"><img class="profile-pic" src="data:image/jpeg;base64,<%= user.getPhoto() %>"></div>
                         <div class="user-nickname"><%= user.getUsername() %></div>
                         <div class="profile-ac"><%= user.getAccuracy() %>%</div>
                     </div>

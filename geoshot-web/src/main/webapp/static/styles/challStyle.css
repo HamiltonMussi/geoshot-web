@@ -2,7 +2,6 @@
     height: 100%;
     width: 80%;
 }
-
 .topRow {
     height: 70%;
     padding: 15px;
@@ -10,6 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #fff;
 }
 
 .bottomRow {
@@ -20,11 +20,58 @@
     align-items: center;
 }
 
+.chall-button {
+    background-color: #fff;
+    padding: 0 1rem 0 1rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-family: Roboto, sans-serif;
+    text-decoration: none !important;
+    font-weight: bold;
+    height: 4rem;
+    font-size: 2rem;
+}
+
+.chall-button:hover {
+    background-color: rgb(30, 185, 241);
+}
+
+.photo-upload {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.photo-upload + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: black;
+    background-color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-family: Roboto, sans-serif;
+    padding: 0 1rem 0 1rem;
+    margin-right: 40px;
+}
+
+.photo-upload:focus + label,
+.photo-upload + label:hover {
+    background-color: rgb(30, 185, 241);
+}
+
 html,
 body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: Roboto, sans-serif;
+    background: rgb(5,10,48);
+    color: #fff;
 }
 
 [class$=api-load-alpha-banner] {

@@ -10,13 +10,14 @@
 </head>
 <body>
 <div class="topRow">
+    <h1>Arreste o pino para a posição desejada</h1>
     <div id="map"></div>
 </div>
 <div class="bottomRow">
     <form method="post" action="/chall" id="guessForm">
         <input type="hidden" value="<%= ((Publication) request.getAttribute("publication")).getPubId() %>" name="pub-id">
         <input type="hidden" id="newPositionInput" name="user-answer">
-        <button type="submit">Te achei!</button>
+        <button type="submit" class="chall-button">Te achei!</button>
     </form>
 </div>
 <script
