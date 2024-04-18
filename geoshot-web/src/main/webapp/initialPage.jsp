@@ -12,7 +12,6 @@
     <div class="main">
         <%@include file="sidebar.jsp"%>
 
-        <div class="hidden"></div>
         <div class="feeds">
             <h1>Pagina Inicial de <%= request.getAttribute("username") %> </h1>
 

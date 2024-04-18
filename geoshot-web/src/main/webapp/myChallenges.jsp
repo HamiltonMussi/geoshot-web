@@ -14,10 +14,6 @@
     <div class="main">
         <%@include file="sidebar.jsp"%>
 
-        <div class="hidden"></div>
-
-
-
         <div class="feeds">
             <h1>Aqui estão seus desafios, <%= ((User) request.getAttribute("user")).getUsername() %></h1>
             <%

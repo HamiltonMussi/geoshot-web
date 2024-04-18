@@ -12,7 +12,6 @@
     <div class="main">
         <%@include file="sidebar.jsp"%>
 
-        <div class="hidden"></div>
         <%
             User user = (User) request.getAttribute("user");
         %>

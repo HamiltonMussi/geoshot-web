@@ -11,8 +11,6 @@
     <div class="main">
         <%@include file="sidebar.jsp"%>
 
-        <div class="hidden"></div>
-
         <% User user = (User) request.getAttribute("user"); %>
         <form action="" method="POST" enctype="multipart/form-data" class="form-trocar-foto">
             <div class="post-feed-identifier">
