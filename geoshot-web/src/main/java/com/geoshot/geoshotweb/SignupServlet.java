@@ -24,7 +24,6 @@ public class SignupServlet extends HttpServlet {
         } else {
             response.sendRedirect("/initial-page");
         }
-
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

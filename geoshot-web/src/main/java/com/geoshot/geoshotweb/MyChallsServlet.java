@@ -38,7 +38,6 @@ public class MyChallsServlet extends HttpServlet {
             request.getRequestDispatcher("myChallenges.jsp").forward(request,response);
 
         }
-
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -58,8 +57,6 @@ public class MyChallsServlet extends HttpServlet {
             PublicationManager.removePublicationById(pubId);
 
             response.sendRedirect("/my-challs");
-
         }
     }
-
 }

@@ -31,10 +31,7 @@ public class SearchServlet extends HttpServlet {
             request.setAttribute("username",username);
 
             request.getRequestDispatcher("search.jsp").forward(request,response);
-
         }
-
-
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -57,7 +54,6 @@ public class SearchServlet extends HttpServlet {
             request.setAttribute("username", username);
 
             if(searchedUser == null) {
-                // não tem esse usuário!
 
                 request.setAttribute("user-not-found","user-not-found");
                 request.getRequestDispatcher("search.jsp").forward(request,response);
@@ -70,12 +66,7 @@ public class SearchServlet extends HttpServlet {
                 request.setAttribute("user", searchedUser);
 
                 request.getRequestDispatcher("search.jsp").forward(request,response);
-
-
             }
-
         }
-
     }
-
 }

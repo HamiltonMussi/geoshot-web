@@ -36,7 +36,5 @@ public class CalculateAccuracy {
         } else {
             return 100.*(3.0598e-7 + FastMath.exp(-distance/200)*1.00025033731);
         }
-
     }
-
 }

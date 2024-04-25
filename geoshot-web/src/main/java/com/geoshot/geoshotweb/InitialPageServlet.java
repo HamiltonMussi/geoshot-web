@@ -16,7 +16,6 @@ public class InitialPageServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
 
-
         if(username == null) {
 
             response.sendRedirect("/home");
@@ -31,37 +30,5 @@ public class InitialPageServlet extends HttpServlet {
         }
     }
 
-//    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-//        HttpSession session = request.getSession();
-//        String username     = (String) session.getAttribute("username");
-//
-//        if(username == null) {
-//            response.sendRedirect("/home");
-//        } else {
-//            int    pubId        = Integer.parseInt((String) request.getParameter("pub-id"));
-//            int    userAnwser   = Integer.parseInt((String) request.getParameter("user-anwser"));
-//
-//            publicationsDAO PublicationManager = new publicationsDAO();
-//
-//            Publication thisPublication = PublicationManager.getPublicationById(pubId);
-//
-//            int correctValue = thisPublication.getCorrectValue();
-//
-//            // Calculo da Pontuação;
-//
-//            double accuracy = 50.0; // Faremos esse calculo quando Hamilton terminar API Google;
-//
-//            attemptsDAO AttemptManager = new attemptsDAO();
-//
-//            AttemptManager.insertAttempt(pubId,username,accuracy);
-//
-//            // E depois, mando pra onde?
-//
-//        }
-//
-//
-//    }
-
     public void destroy() {}
-
 }

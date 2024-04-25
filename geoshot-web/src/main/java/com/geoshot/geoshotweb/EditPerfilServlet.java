@@ -73,24 +73,18 @@ public class EditPerfilServlet extends HttpServlet {
                 request.getRequestDispatcher("editPerfil.jsp").forward(request,response);
             } else {
 
-
                 if(!newPassword.isEmpty()) {
                     // Editar Apenas Senha;
                     UserManager.changePasswordFromUser(username,newPassword);
 
                 }
-
                 if(!encodedPhoto.isEmpty()) {
                     // Editar Apenas photo;
                     UserManager.changePhotoFromUser(username,encodedPhoto);
                 }
 
                 response.sendRedirect("/perfil");
-
             }
-
-
         }
     }
-
 }

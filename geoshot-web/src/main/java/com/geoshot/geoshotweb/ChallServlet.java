@@ -62,8 +62,5 @@ public class ChallServlet extends HttpServlet {
 
             response.sendRedirect("/my-attempts");
         }
-
-
     }
-
 }

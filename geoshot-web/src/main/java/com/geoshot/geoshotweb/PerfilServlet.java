@@ -26,5 +26,4 @@ public class PerfilServlet extends HttpServlet {
             request.getRequestDispatcher("perfil.jsp").forward(request,response);
         }
     }
-
 }

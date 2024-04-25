@@ -24,8 +24,6 @@ public class LoginServlet extends HttpServlet {
         } else {
             response.sendRedirect("/initial-page");
         }
-
-
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -48,7 +46,6 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("nologin","nologin");
             request.getRequestDispatcher("/login.jsp").forward(request,response);
         }
-
     }
 
     public void destroy() {}

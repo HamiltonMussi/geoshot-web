@@ -10,11 +10,6 @@ import java.util.List;
 import java.util.SimpleTimeZone;
 
 public class usersDAO {
-
-//        public static void main(String[] args) {
-//            usersDAO teste = new usersDAO();
-//            teste.changePhotoFromUser("laplace","default-photo");
-//        }
     private Connection dbconnection;
 
     public usersDAO() {
@@ -98,7 +93,6 @@ public class usersDAO {
             System.out.println(ex.getMessage());
             return null;
         }
-
     }
 
     public User getUser(String username) {
@@ -171,7 +165,6 @@ public class usersDAO {
         } catch(SQLException ex) {
             System.out.println(ex.getMessage());
         }
-
     }
 
     public boolean follows(String usernameFollower, String usernameFollowed) {

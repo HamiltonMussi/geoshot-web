@@ -27,7 +27,6 @@ public class MyAttempt {
     public String getAttemptDate() { return  this.attemptDate; }
 
     public String getUsername() { return this.username; }
-
 }
 
 

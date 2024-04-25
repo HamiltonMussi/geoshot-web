@@ -10,13 +10,6 @@ import com.geoshot.geoshotweb.classes.HashGeneretor;
 
 public class PhotoConverter {
 
-//    public static void main(String[] args) {
-//        String gay = encoder("/home/laplace/Downloads/laplace.jpg");
-//        File photo = decoder(gay);
-//        System.out.println(photo.getAbsoluteFile());
-//        System.out.println(gay);
-//    }
-
     public static String encoder(String filename) {
         byte[] fileContent = null;
         String encodedString = null;
@@ -53,5 +46,4 @@ public class PhotoConverter {
     public static File decoder(String encodedString) {
         return PhotoConverter.decoder(encodedString,".");
     }
-
 }

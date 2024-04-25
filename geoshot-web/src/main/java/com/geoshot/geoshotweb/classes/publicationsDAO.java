@@ -7,14 +7,6 @@ import java.util.List;
 
 public class publicationsDAO {
 
-
-//    public static void main(String[] args) {
-//        publicationsDAO hop = new publicationsDAO();
-//        for(Publication hopper: hop.getMyPublications("laplace")) {
-//            System.out.println(hopper.getPubId());
-//        }
-//    }
-
     private Connection dbconnection;
 
     public publicationsDAO() {
@@ -218,6 +210,5 @@ public class publicationsDAO {
         } catch(SQLException ex) {
             System.out.println(ex.getMessage());
         }
-
     }
 }

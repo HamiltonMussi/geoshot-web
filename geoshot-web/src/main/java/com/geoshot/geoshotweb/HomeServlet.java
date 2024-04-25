@@ -20,8 +20,5 @@ public class HomeServlet extends HttpServlet {
         }
     }
 
-    public void destroy() {
-
-    }
-
+    public void destroy() {}
 }

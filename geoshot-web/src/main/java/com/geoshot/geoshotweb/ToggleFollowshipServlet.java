@@ -30,7 +30,6 @@ public class ToggleFollowshipServlet extends HttpServlet {
             User searchedUser = UserManager.getUser(searchedUsername);
 
             if(searchedUser == null) {
-                // Usuário não existe!!
                 response.sendRedirect("/search");
             } else {
 
@@ -41,15 +40,8 @@ public class ToggleFollowshipServlet extends HttpServlet {
                     // Usuário não segue o pesquisado;
                     UserManager.insertFollow(username,searchedUsername);
                 }
-
                 response.sendRedirect("/search");
-
             }
-
-
-
         }
-
     }
-
 }

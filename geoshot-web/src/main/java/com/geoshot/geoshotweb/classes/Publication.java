@@ -20,5 +20,4 @@ public class Publication {
     public String getDateOfCreation() { return this.dateOfCreation; }
 
     public  int getOwnerUserId() { return this.ownerUserId; }
-
 }

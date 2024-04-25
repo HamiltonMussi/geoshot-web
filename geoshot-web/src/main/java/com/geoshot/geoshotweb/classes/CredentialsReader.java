@@ -8,16 +8,6 @@ import java.util.Scanner;
 
 public class CredentialsReader {
 
-//    public static void main(String[] args) {
-//        try {
-//            CredentialsReader hop = new CredentialsReader("/home/laplace/Projects/Geoshot/geoshot-web/misc/Credentials");
-//            System.out.println(hop.getUser());
-//            System.out.println(hop.getPlainPassword());
-//        } catch (IOException iox) {
-//            System.out.println(iox);
-//        }
-//    }
-
     private String server, port, db, user, plainPassword;
     public CredentialsReader(String filename) throws  IOException {
         List<String> credentials = new ArrayList<>();
@@ -50,6 +40,5 @@ public class CredentialsReader {
     public String getPlainPassword() {
         return this.plainPassword;
     }
-
 }
 

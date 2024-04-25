@@ -21,9 +21,7 @@ public class LogoutServlet extends HttpServlet {
         }
 
         response.sendRedirect("/");
-
     }
 
     public void destroy() {}
-
 }

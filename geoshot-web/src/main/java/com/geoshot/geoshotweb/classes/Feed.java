@@ -21,5 +21,4 @@ public class Feed {
     public String getDateOfCreation() { return this.dateOfCreation; }
 
     public  String getUsername() { return this.username; }
-
 }

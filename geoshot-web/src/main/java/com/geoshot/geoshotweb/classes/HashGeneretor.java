@@ -22,13 +22,11 @@ public class HashGeneretor {
         }
 
         try {
-
             bytePassword = digest.digest(plainPassword.getBytes("UTF-8"));
             for(byte b: bytePassword) {
                 String hex = String.format("%02x",b);
                 byteToHexString.append(hex);
             }
-
         } catch(UnsupportedEncodingException ex) {
             System.out.println(ex.getMessage());
         } catch(NullPointerException ex) {
@@ -37,5 +35,4 @@ public class HashGeneretor {
 
         return byteToHexString.toString();
     }
-
 }
