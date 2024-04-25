@@ -129,7 +129,6 @@ public class usersDAO {
             }
 
             return thisUser;
-
         }
     }
 

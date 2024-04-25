@@ -6,10 +6,6 @@ import java.security.NoSuchAlgorithmException;
 
 public class HashGeneretor {
 
-//    public static void main(String[] args) {
-//        System.out.println(getHash("SHA256", "1234"));
-//    }
-
     public static String getHash(String algorithm, String plainPassword) {
         StringBuilder byteToHexString = new StringBuilder();
         MessageDigest digest = null;

@@ -180,13 +180,13 @@ public class publicationsDAO {
 
             while(results.next()) {
                 publications.add(
-                        new Publication(
-                                results.getInt("pub_id"),
-                                results.getInt("owner_user_id"),
-                                results.getString("photo"),
-                                results.getString("date_of_creation"),
-                                results.getString("correct_value")
-                        )
+                    new Publication(
+                            results.getInt("pub_id"),
+                            results.getInt("owner_user_id"),
+                            results.getString("photo"),
+                            results.getString("date_of_creation"),
+                            results.getString("correct_value")
+                    )
                 );
             }
 
